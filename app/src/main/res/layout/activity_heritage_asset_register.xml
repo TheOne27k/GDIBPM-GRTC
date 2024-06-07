@@ -3,49 +3,131 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
     android:orientation="vertical">
-<TextView
+    <TextView
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="80dp"
     android:text="REGISTRAR BIEN PATRIMONIAL"
     android:gravity="center"
     android:textStyle="bold"
     android:textSize="20dp"/>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/gray"
+        android:layout_width="350dp"
+        android:layout_height="650dp"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="80dp"
-            android:text="Codigo Patrimonial"/>
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="80dp"
-            android:text="Nombre"/>
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="80dp"
-            android:text="Marca"/>
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="80dp"
-            android:text="Modelo"/>
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="80dp"
-            android:text="Serie"/>
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="80dp"
-            android:text="Color"/>
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="80dp"
-            android:text="Estado"/>
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="80dp"
-            android:text="Evidencia"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Código Patrimonial" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Nombre" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Marca" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Modelo" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Serie" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Color" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:hint="Estado"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="50dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Evidencia" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="15dp"
+                android:backgroundTint="@color/blue"
+                android:text="Registrar" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/black"
+                android:text="Cancelar" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
