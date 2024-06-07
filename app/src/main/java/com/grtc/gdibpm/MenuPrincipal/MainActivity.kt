@@ -1,5 +1,6 @@
 package com.grtc.gdibpm.MenuPrincipal
 
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -14,11 +15,11 @@ class MainActivity : AppCompatActivity(){
         val   recycleBienes = findViewById<RecyclerView>(R.id.recycleBienes)
 
         val listbienes = listOf<Main>(
-            Main("Desplazamiento", R.drawable.desplazamiento),
-            Main("Ingresos", R.drawable.ingresos),
-            Main("Busqueda", R.drawable.lupa) ,
-            Main("Gestión de areas y Empleados", R.drawable.recursos),
-            Main("Dashboard", R.drawable.dashboard)
+            Main("Desplazamiento", R.drawable.desplazamientoo),
+            Main("Ingresos", R.drawable.ingresoss),
+            Main("Busqueda", R.drawable.lupaa) ,
+            Main("Gestión de areas y Empleados", R.drawable.recursoss),
+            Main("Dashboard", R.drawable.dashboardd)
         )
 
 

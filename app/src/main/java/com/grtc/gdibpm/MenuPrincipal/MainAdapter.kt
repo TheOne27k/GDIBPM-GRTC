@@ -21,22 +21,6 @@ class MainAdapter(val List: List<Main>) :
         holder.bind(desplazamiento)
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+

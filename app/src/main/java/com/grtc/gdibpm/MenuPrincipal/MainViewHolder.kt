@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.grtc.gdibpm.R
 
 class MainViewHolder(inflater: LayoutInflater, viewGroup: ViewGroup):
-RecyclerView.ViewHolder(inflater.inflate(R.layout.item_main , viewGroup, false)){
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.item_main , viewGroup, false)){
 
     private var imgDesplazamiento: ImageView? = null
     private var textDesplazamiento: TextView? = null
