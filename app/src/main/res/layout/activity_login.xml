@@ -12,7 +12,7 @@
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/LogoLogin"
+        android:src="@drawable/logo_login"
     android:layout_marginBottom="16dp" />
 
     <!-- Ícono de candado -->
@@ -20,7 +20,7 @@
         android:id="@+id/lock_icon"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/candadoLogin"
+        android:src="@drawable/candado_login"
     android:layout_marginBottom="16dp" />
 
     <!-- Texto de bienvenida -->
@@ -63,7 +63,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:padding="4dp"
-            android:src="@drawable/iconoOjo" />
+            android:src="@drawable/icono_ojo" />
     </RelativeLayout>
 
     <!-- Botón de ingresar -->
