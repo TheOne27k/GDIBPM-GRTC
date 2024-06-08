@@ -24,7 +24,7 @@
                 android:id="@+id/imgDesplazamiento"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/registro"/>
+                android:src="@drawable/recursoss"/>
 
             <TextView
                 android:id="@+id/textDesplazamiento"
