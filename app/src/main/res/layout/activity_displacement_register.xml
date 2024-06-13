@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -12,7 +13,7 @@
         android:textStyle="bold"
         android:textSize="20sp"/>
     <LinearLayout
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="650dp"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical">
@@ -135,7 +136,8 @@
         android:layout_width="360dp"
         android:layout_height="250dp"
         android:layout_marginTop="10dp"
-        android:background="@color/gray_light">
+        android:background="@color/gray_light"
+        >
         <TableRow
             android:background="@color/gray">
             <TextView android:text="Codigo Patrim."
@@ -145,40 +147,18 @@
                 android:layout_column="1"
                 android:padding="5dp"/>
             <TextView android:text="Evidencia"
-                android:layout_width="90dp"
                 android:layout_column="2"
                 android:padding="5dp"/>
             <TextView android:text=""
+                android:gravity="end"
                 android:layout_column="3"
                 android:padding="5dp"/>
         </TableRow>
-        <TableRow>
-            <TextView android:text=""
-                android:layout_column="0"/>
-            <TextView android:text=""
-                android:layout_column="1"/>
-            <TextView android:text=""
-                android:layout_column="2"/>
-            <LinearLayout
-                android:layout_column="3">
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="45dp"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/blue"
-                    app:icon="@drawable/pencil_svgrepo_com"
-                    app:iconSize="30dp"
-                    app:iconGravity="textEnd"
-                    />
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/red"
-                    app:icon="@drawable/trash_bin_minimalistic_svgrepo_com"
-                    app:iconSize="30dp"
-                    app:iconGravity="textEnd"/>
-            </LinearLayout>
-        </TableRow>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerHeritageAssets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_heritage_asset"/>
 
     </TableLayout>
         <LinearLayout

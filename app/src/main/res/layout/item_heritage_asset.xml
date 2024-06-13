@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="360dp"
+    android:layout_height="250dp"
+    android:layout_marginTop="10dp"
+    android:background="@color/gray_light"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:stretchColumns="1,2,3,4">
+    <TableRow
+        >
+        <TextView android:text=""
+            android:id="@+id/HeritageCode"
+            android:layout_column="1"
+            android:padding="5dp"/>
+        <TextView android:text=""
+            android:id="@+id/HeritageState"
+            android:layout_column="2"
+            android:padding="5dp"/>
+        <TextView android:text=""
+            android:id="@+id/HeritageEvidence"
+            android:layout_column="3"
+            android:padding="5dp"/>
+        <LinearLayout
+            android:gravity="end"
+            android:layout_column="4">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:backgroundTint="@color/blue"
+                app:icon="@drawable/pencil_svgrepo_com"
+                app:iconSize="30dp"
+                app:iconGravity="textEnd"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="45dp"
+                android:layout_marginLeft="5dp"
+                android:layout_height="45dp"
+                android:backgroundTint="@color/red"
+                app:icon="@drawable/trash_bin_minimalistic_svgrepo_com"
+                app:iconSize="30dp"
+                app:iconGravity="textEnd"/>
+        </LinearLayout>
+    </TableRow>
+</TableLayout>
