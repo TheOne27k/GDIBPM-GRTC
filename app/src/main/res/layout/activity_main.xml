@@ -21,9 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="2"
-        android:rowCount="3"
-        android:columnGap="16dp"
-        android:rowGap="16dp">
+        android:rowCount="3">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
@@ -31,8 +29,6 @@
             android:layout_margin="8dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:cardCornerRadius="8dp"
-            android:cardElevation="4dp"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground">
 
@@ -67,8 +63,6 @@
             android:layout_margin="8dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:cardCornerRadius="8dp"
-            android:cardElevation="4dp"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground">
 
@@ -82,7 +76,6 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:contentDescription="Busqueda"
                     android:src="@drawable/lupaa"
                     />
 
@@ -105,8 +98,6 @@
             android:layout_margin="8dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:cardCornerRadius="8dp"
-            android:cardElevation="4dp"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground">
 
@@ -120,7 +111,6 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:contentDescription="Gestión de áreas y Empleados"
                     android:src="@drawable/recursoss"
                     />
 
@@ -141,8 +131,6 @@
             android:layout_margin="8dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:cardCornerRadius="8dp"
-            android:cardElevation="4dp"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground">
 
@@ -156,7 +144,6 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:contentDescription="Dashboard"
                     android:src="@drawable/dashboardd"
                     />
 
