@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -7,66 +8,57 @@
     android:gravity="center"
     android:background="@android:color/white">
 
-    <!-- Logo de la organización -->
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="230dp"
+        android:layout_height="200dp"
         android:src="@drawable/logo_login"
-    android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp" />
 
-    <!-- Ícono de candado -->
     <ImageView
         android:id="@+id/lock_icon"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/candado_login"
-    android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp" />
 
-    <!-- Texto de bienvenida -->
     <TextView
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bienvenido a la GRTC"
-        android:textSize="18sp"
+        android:textSize="26sp"
         android:textColor="@android:color/black"
         android:layout_marginBottom="16dp" />
 
-    <!-- Campo de texto para el email -->
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Campo de texto para la contraseña con botón para mostrar/ocultar -->
-    <RelativeLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:paddingEnd="48dp" />
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/toggle_password_visibility"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:padding="4dp"
-            android:src="@drawable/icono_ojo" />
-    </RelativeLayout>
-
-    <!-- Botón de ingresar -->
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
@@ -76,7 +68,6 @@
         android:textColor="@android:color/white"
         android:layout_marginBottom="16dp" />
 
-    <!-- Enlace para recuperar contraseña -->
     <TextView
         android:id="@+id/forgot_password"
         android:layout_width="wrap_content"
