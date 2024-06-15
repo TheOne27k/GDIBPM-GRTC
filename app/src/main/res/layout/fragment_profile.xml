@@ -64,6 +64,7 @@
 
                     <ImageView
                         android:id="@+id/imageView1"
+                        android:src="@drawable/profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
@@ -120,6 +121,7 @@
                                     android:background="@drawable/circle_background">
 
                                     <ImageView
+                                        android:src="@drawable/cambio_foto"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         app:layout_constraintBottom_toBottomOf="parent"
@@ -135,7 +137,7 @@
                                     android:layout_margin="8dp"
                                     android:layout_marginBottom="8dp"
                                     android:layout_weight="1"
-                                    android:text="Numero"
+                                    android:text="Foto"
                                     android:textAlignment="center"
                                     android:textColor="#000000"
                                     android:textSize="13sp"
@@ -160,6 +162,7 @@
                                     <ImageView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
+                                        android:src="@drawable/settings"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toStartOf="parent"
@@ -196,7 +199,9 @@
                                     android:background="@drawable/circle_background">
 
                                     <ImageView
+
                                         android:layout_width="wrap_content"
+                                        android:src="@drawable/notification"
                                         android:layout_height="wrap_content"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintEnd_toEndOf="parent"
