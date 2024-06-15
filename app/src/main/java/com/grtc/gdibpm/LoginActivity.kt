@@ -51,15 +51,6 @@ class LoginActivity: AppCompatActivity() {
             }
         }
 
-        passwordLayout.setEndIconOnClickListener {
-            if (password.inputType == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
-                password.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            } else {
-                password.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            }
-            password.setSelection(password.text?.length ?: 0)
-        }
-
         val forgotPasswordTextView: TextView = findViewById(R.id.forgot_password)
         forgotPasswordTextView.setOnClickListener {
 
