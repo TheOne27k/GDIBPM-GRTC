@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="15dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:text="Crear Empleado"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="50dp"
+        android:background="@color/gray_light"
+        >
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="550dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:background="@color/gray_light">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="25dp"
+        android:text="Nombre del Empleado:"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/black"
+        android:textStyle="bold|italic">
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:hint="Nombre"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="25dp"
+        android:text="Apellidos del Empleado:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold|italic">
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:hint="Apellidos"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="25dp"
+        android:textSize="20sp"
+        android:text="DNI del Empleado:"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold|italic">
+    </TextView>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="DNI"
+            android:textStyle="bold"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="25dp"
+            android:textSize="20sp"
+            android:text="Area asignada:"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold|italic">
+        </TextView>
+
+        <Spinner
+        android:id="@+id/Area"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="15dp"
+                android:backgroundTint="@color/blue"
+                android:text="Registrar" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/black"
+                android:text="Cancelar" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
