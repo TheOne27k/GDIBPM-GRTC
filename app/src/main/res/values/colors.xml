@@ -7,4 +7,15 @@
     <color name="red">#E30101</color>
     <color name="gray">#939393</color>
     <color name="gray_light">#CDCDCD</color>
+    <color name="purple_700">#FF370083</color>
+    <color name="purple_500">#FF370083</color>
+    <color name="purple_200">#FF370083</color>
+    <color name="color_primary_ligth">#9261FF</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+
+
+
+
 </resources>
