@@ -3,24 +3,14 @@
     <item
         android:id="@+id/nav_codigo_patrimonial"
         android:title="Código Patrimonial" />
-    <item
-        android:id="@+id/nav_area"
-        android:title="Área">
-        <menu>
-            <item
-                android:id="@+id/nav_area_origen"
-                android:title="Área-Origen" />
-            <item
-                android:id="@+id/nav_area_destino"
-                android:title="Área-Destino" />
-        </menu>
-    </item>
+
     <item
         android:id="@+id/nav_empleado"
+
         android:title="Empleado">
         <menu>
             <item
-                android:id="@+id/nav_empleado_1"
+                android:id=""
                 android:title="Empleado 1" />
             <item
                 android:id="@+id/nav_empleado_2"
