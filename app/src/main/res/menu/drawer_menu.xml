@@ -8,9 +8,10 @@
         android:id="@+id/nav_empleado"
 
         android:title="Empleado">
+
         <menu>
             <item
-                android:id=""
+                android:id="@+id/nav_empleado_1"
                 android:title="Empleado 1" />
             <item
                 android:id="@+id/nav_empleado_2"
