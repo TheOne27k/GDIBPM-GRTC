@@ -19,6 +19,7 @@ import com.aprendizaje.practicaconbd.PatrimonioFragment
 import com.google.android.material.navigation.NavigationView
 
 class FilterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
 
@@ -73,6 +74,7 @@ class FilterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         return true
     }
 
+    //Filtrado
     private fun filterNavigationView(query: String?) {
         try {
             val menu = navigationView.menu
@@ -100,9 +102,6 @@ class FilterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_codigo_patrimonial -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, PatrimonioFragment()).commit()
 
-            R.id.nav_area -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, AreaFragment()).commit()
-
             R.id.nav_empleado -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, EmpleadoFragment()).commit()
 
@@ -114,7 +113,7 @@ class FilterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
             R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
         }
-        drawerLayout.closeDrawer(GravityCompat.START)
+                drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 }
