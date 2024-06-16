@@ -46,10 +46,7 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/dashboard_logistica"
                 android:layout_gravity="center_horizontal"
-
-
                 />
 
             <TextView
@@ -87,10 +84,7 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/dashboard_admi"
                 android:layout_gravity="center_horizontal"
-
-
                 />
 
             <TextView
@@ -100,7 +94,7 @@
                 android:layout_gravity="center_horizontal"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
@@ -114,7 +108,6 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:layout_row="1"
-        android:layout_column=""
 
         app:cardElevation="12dp"
         >
@@ -128,7 +121,6 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/dashboard_mantenimiento"
                 android:layout_gravity="center_horizontal"
 
 
@@ -141,7 +133,7 @@
                 android:layout_gravity="center_horizontal"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -169,7 +161,6 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/dashboard_ti"
                 android:layout_gravity="center_horizontal"
 
 
