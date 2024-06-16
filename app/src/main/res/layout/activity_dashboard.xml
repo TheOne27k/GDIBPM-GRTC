@@ -47,12 +47,15 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
+
+                android:src="@drawable/barras_1"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Area 2"
+                android:text="Desplazamiento por Mes"
+                android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -85,12 +88,14 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
+               android:src="@drawable/barras_1"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Area 1"
+                android:text="Desplazamiento por Area"
+                android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -122,14 +127,15 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
-
+                 android:src="@drawable/grafico_circular"
 
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Area 3"
+                android:text="Desplazamiento por estado"
+                android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -162,6 +168,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
+                android:src="@drawable/grafico_circular"
 
 
                 />
@@ -169,7 +176,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Area 4"
+                android:text="Bienes por Estado"
+                android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
                 android:textSize="18sp"
                 android:textStyle="bold"
