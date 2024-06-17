@@ -8,7 +8,7 @@
 
     <item
         android:title=""
-        android:enabled="true"
+        android:enabled="false"
         android:icon="@android:color/transparent"/>
 
     <item

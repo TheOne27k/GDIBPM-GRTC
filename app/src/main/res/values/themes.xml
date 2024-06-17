@@ -5,4 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
     <style name="Theme.Dibpm" parent="Base.Theme.Dibpm" />
+    <style name="DialogAnimation">
+        <item name="android:windowAnimationStyle">@anim/slide_in_animation</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_animation</item>
+    </style>
 </resources>
