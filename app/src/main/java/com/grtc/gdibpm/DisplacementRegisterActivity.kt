@@ -1,6 +1,7 @@
 package com.grtc.gdibpm
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,5 +21,10 @@ class DisplacementRegisterActivity: AppCompatActivity() {
         val adapter = Heritagedapter(listHeritage)
         recyclerHeritage.adapter = adapter
         recyclerHeritage.layoutManager = LinearLayoutManager(this)
+
+        val btnCancel = findViewById<Button>(R.id.btnCancel)
+        btnCancel.setOnClickListener {
+            finish()
+        }
     }
 }
