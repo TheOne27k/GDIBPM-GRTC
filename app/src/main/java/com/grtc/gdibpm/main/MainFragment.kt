@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
 import com.grtc.gdibpm.DashboardActivity
 import com.grtc.gdibpm.FilterActivity
-import com.grtc.gdibpm.HeritageAssetRegisterActivity
 import com.grtc.gdibpm.R
 import com.grtc.gdibpm.gestion_area_y_empleado.GestionActivity
 
