@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
 
     <application
         android:allowBackup="true"
@@ -26,8 +28,9 @@
         <activity android:name=".DashboardActivity" />
         <activity android:name=".FilterActivity"/>
         <activity android:name=".gestion_area_y_empleado.GestionActivity"/>
-        <activity android:name=".HeritageAssetRegisterActivity" />
+        <activity android:name=".heritage_asset.HeritageAssetRegisterActivity" />
         <activity android:name=".ForgotPasswordActivity" />
     </application>
+
 
 </manifest>

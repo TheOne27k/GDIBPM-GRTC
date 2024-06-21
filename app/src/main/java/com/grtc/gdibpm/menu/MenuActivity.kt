@@ -11,11 +11,10 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.grtc.gdibpm.DisplacementRegisterActivity
-import com.grtc.gdibpm.HeritageAssetRegisterActivity
+import com.grtc.gdibpm.heritage_asset.HeritageAssetRegisterActivity
 import com.grtc.gdibpm.R
 import com.grtc.gdibpm.main.MainFragment
 import com.grtc.gdibpm.profile.ProfileFragment
