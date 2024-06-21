@@ -12,175 +12,158 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="20sp"/>
-    <LinearLayout
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="650dp"
-        android:layout_gravity="center_horizontal"
-        android:orientation="vertical">
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="250dp"
-            android:layout_height="50dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Motivo" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp">
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="20dp">
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="20dp"
-                    android:text="Remitente:"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15sp"
-                    />
-                <LinearLayout
-                    android:layout_width="160dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="20dp"
-                        android:hint="Area"
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-                        <AutoCompleteTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:inputType="none"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="20dp"
-                        android:hint="Empleado"
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-                        <AutoCompleteTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:inputType="none"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp">
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="20dp"
-                    android:text="Receptor:"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15sp"
-                    />
-                <LinearLayout
-                    android:layout_width="160dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="20dp"
-                        android:hint="Area"
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-                        <AutoCompleteTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:inputType="none"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="20dp"
-                        android:hint="Empleado"
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-                        <AutoCompleteTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:inputType="none"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="650dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:hint="Codigo Patrimonial">
+                android:layout_width="250dp"
+                android:layout_height="50dp">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Motivo" />
             </com.google.android.material.textfield.TextInputLayout>
-            <Button
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Agregar"
-                android:layout_marginLeft="30dp"
-                android:backgroundTint="@color/black"/>
-        </LinearLayout>
-    <TableLayout
-        android:layout_width="360dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/gray_light"
-        >
-        <TableRow
-            android:background="@color/gray">
-            <TextView android:text="Codigo Patrim."
-                android:layout_column="0"
-                android:padding="5dp"/>
-            <TextView android:text="Estado"
-                android:layout_column="1"
-                android:padding="5dp"/>
-            <TextView android:text="Evidencia"
-                android:layout_column="2"
-                android:padding="5dp"/>
-            <TextView android:text=""
-                android:gravity="end"
-                android:layout_column="3"
-                android:padding="5dp"/>
-        </TableRow>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerHeritageAssets"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/item_heritage_asset"/>
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
 
-    </TableLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_margin="10dp">
 
-            <Button
-                android:id="@+id/btnRegister"
-                android:layout_width="120dp"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Remitente:" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:hint="Empleado">
+
+                            <AutoCompleteTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_margin="10dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Receptor:" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:hint="Empleado">
+
+                            <AutoCompleteTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Codigo Patrimonial">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Agregar"
+                    android:layout_marginLeft="30dp"
+                    android:backgroundTint="@color/black"/>
+            </LinearLayout>
+            <TableLayout
+                android:layout_width="360dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray_light"
+                >
+                <TableRow
+                    android:background="@color/gray">
+                    <TextView android:text="Codigo Patrim."
+                        android:layout_column="0"
+                        android:padding="5dp"/>
+                    <TextView android:text="Estado"
+                        android:layout_column="1"
+                        android:padding="5dp"/>
+                    <TextView android:text="Evidencia"
+                        android:layout_column="2"
+                        android:padding="5dp"/>
+                    <TextView android:text=""
+                        android:gravity="end"
+                        android:layout_column="3"
+                        android:padding="5dp"/>
+                </TableRow>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerHeritageAssets"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_heritage_asset"/>
+
+            </TableLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginRight="15dp"
-                android:backgroundTint="@color/blue"
-                android:text="Registrar" />
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal">
 
-            <Button
-                android:id="@+id/btnCancel"
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                android:backgroundTint="@color/black"
-                android:text="Cancelar" />
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="15dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="Registrar" />
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black"
+                    android:text="Cancelar" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
