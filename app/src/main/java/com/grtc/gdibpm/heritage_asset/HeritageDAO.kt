@@ -15,6 +15,8 @@ interface HeritageDAO {
     fun update(heritage: HeritageAsset)
     @Delete
     fun delete(heritage: HeritageAsset)
+    @Query("SELECT * FROM heritage_asset_table WHERE heritage_code = :code")
+    fun listByHeritageCode(code: String): LiveData<List<HeritageAsset>>
     @Query("SELECT * FROM heritage_asset_table")
     fun list(): LiveData<List<HeritageAsset>>
 }
