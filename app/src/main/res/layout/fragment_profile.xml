@@ -86,7 +86,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"
+                        android:layout_height="420dp"
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="30dp"
                         android:layout_marginEnd="24dp"
@@ -121,9 +121,9 @@
                                     android:background="@drawable/circle_background">
 
                                     <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
                                         android:src="@drawable/cambio_foto"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toStartOf="parent"
@@ -133,11 +133,11 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="30dp"
                                     android:layout_margin="8dp"
                                     android:layout_marginBottom="8dp"
                                     android:layout_weight="1"
-                                    android:text="Foto"
+                                    android:text="Cambio de Foto"
                                     android:textAlignment="center"
                                     android:textColor="#000000"
                                     android:textSize="13sp"
@@ -156,13 +156,13 @@
                                 <androidx.constraintlayout.widget.ConstraintLayout
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
-                                    android:layout_margin="12dp"
+                                    android:layout_margin="18dp"
                                     android:background="@drawable/circle_background">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:src="@drawable/settings"
+                                        android:src="@drawable/edit_dashboard"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toStartOf="parent"
@@ -176,7 +176,7 @@
                                     android:layout_margin="8dp"
                                     android:layout_marginBottom="8dp"
                                     android:layout_weight="1"
-                                    android:text="Settings"
+                                    android:text="Editar"
                                     android:textAlignment="center"
                                     android:textColor="#000000"
                                     android:textSize="13sp"
@@ -195,7 +195,7 @@
                                 <androidx.constraintlayout.widget.ConstraintLayout
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
-                                    android:layout_margin="12dp"
+                                    android:layout_margin="18dp"
                                     android:background="@drawable/circle_background">
 
                                     <ImageView
@@ -216,7 +216,7 @@
                                     android:layout_margin="8dp"
                                     android:layout_marginBottom="8dp"
                                     android:layout_weight="1"
-                                    android:text="Notifications"
+                                    android:text="Notificationes"
                                     android:textAlignment="center"
                                     android:textColor="#000000"
                                     android:textSize="13sp"
@@ -235,9 +235,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Area"
+                                android:text="Area:"
                                 android:textColor="#182693"
-                                android:textSize="18sp"
+                                android:textSize="22sp"
 
                                 />
 
@@ -246,8 +246,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Recursos Humanos"
+                                android:textAlignment="center"
                                 android:textSize="16sp"
-                                android:textAlignment="viewEnd"
                                 android:textColor="#5B5B5B"
                                 />
                         </LinearLayout>
@@ -272,9 +272,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Cargo"
+                                android:text="Cargo:"
                                 android:textColor="#182693"
-                                android:textSize="18sp"
+                                android:textSize="22sp"
 
                                 />
 
@@ -283,7 +283,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Asistente"
-                                android:textAlignment="viewEnd"
+                                android:textAlignment="center"
                                 android:textColor="#5B5B5B"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -308,9 +308,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Telefono"
+                                android:text="Telefono:"
                                 android:textColor="#182693"
-                                android:textSize="18sp"
+                                android:textSize="22sp"
 
                                 />
 
@@ -319,7 +319,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="997269339"
-                                android:textAlignment="viewEnd"
+                                android:textAlignment="center"
                                 android:textColor="#5B5B5B"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -344,9 +344,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Direccion"
+                                android:text="Dirección:"
                                 android:textColor="#182693"
-                                android:textSize="18sp"
+                                android:textSize="22sp"
 
                                 />
 
@@ -355,7 +355,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Mantaro 179"
-                                android:textAlignment="viewEnd"
+                                android:textAlignment="center"
                                 android:textColor="#5B5B5B"
                                 android:textSize="16sp" />
                         </LinearLayout>
