@@ -6,10 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.grtc.gdibpm.heritage_asset.HeritageAsset
 import com.grtc.gdibpm.heritage_asset.HeritageDAO
+import com.grtc.gdibpm.users.UserDAO
 
-@Database(entities = [HeritageAsset::class], version = 1)
+@Database(entities = [HeritageAsset::class], version = 2)
 abstract class GrtcDatabase: RoomDatabase() {
     abstract fun heritageDao(): HeritageDAO
+    abstract fun userDao(): HeritageDAO
     companion object {
         const val DATABASE_NAME = "grtc_displacement"
         @Volatile
