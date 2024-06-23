@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="1">
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardDashboard"
             android:layout_width="0dp"
@@ -39,8 +40,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="16dp"
-                android:gravity="center">
+                android:padding="16dp">
 
                 <ImageView
                     android:layout_width="150dp"
@@ -50,14 +50,14 @@
                     />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:gravity="center"
                     android:layout_marginTop="8dp"
-                    android:text="Dashboard"
+                    android:text="Dashbaord"
                     android:textColor="@color/blue_light"
                     android:textStyle="bold"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
