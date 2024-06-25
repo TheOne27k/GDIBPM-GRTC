@@ -15,7 +15,7 @@ class empleadoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view= inflater.inflate(R.layout.fragment_fragmen_listado_empleado, container, false)
+        val view= inflater.inflate(R.layout.fragment_list_users, container, false)
 
         val btnAddEmpleado = view.findViewById<Button>(R.id.btnAddEmpleado)
 

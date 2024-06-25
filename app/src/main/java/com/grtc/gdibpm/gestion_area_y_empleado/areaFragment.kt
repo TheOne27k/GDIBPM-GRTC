@@ -17,7 +17,7 @@ class areaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_listado_area, container, false)
+        val view = inflater.inflate(R.layout.fragment_list_area, container, false)
 
         val btnAddArea = view.findViewById<Button>(R.id.btnAddArea)
 

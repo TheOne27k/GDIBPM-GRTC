@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Crear/Actualizar"
+            android:text="Gestionar Areas y Empleados"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
     </LinearLayout>

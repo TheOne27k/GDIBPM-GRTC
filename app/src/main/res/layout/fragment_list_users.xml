@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <LinearLayout
             android:id="@+id/contentLayout"
-            android:layout_below="@id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -29,7 +30,7 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#A9A9A9"
+                        android:background="@color/gray"
                         android:padding="8dp">
 
                         <TextView
@@ -62,52 +63,12 @@
                             android:gravity="center" />
                     </TableRow>
 
-                    <TableRow
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerEmpleados"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text=""
-                            android:gravity="center"/>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"/>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text=""
-                            android:gravity="center" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
-                            android:gravity="center">
-
-                            <Button
-                                android:id="@+id/btnUpdate"
-                                android:layout_width="40dp"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/blue"/>
-
-                            <Button
-                                android:id="@+id/btnDelete"
-                                android:layout_width="40dp"
-                                android:layout_marginLeft="3dp"
-                                android:layout_height="wrap_content"/>
-
-                        </LinearLayout>
-                    </TableRow>
+                        tools:listitem="@layout/item_user"
+                        tools:itemCount="1"/>
                 </TableLayout>
 
                 <com.google.android.material.button.MaterialButton
@@ -120,4 +81,6 @@
 
             </LinearLayout>
         </LinearLayout>
+    </ScrollView>
+
 </FrameLayout>

@@ -1,13 +1,10 @@
 package com.grtc.gdibpm.gestion_area_y_empleado
 
 import VPAdapter
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.google.android.material.button.MaterialButton
 import com.google.android.material.tabs.TabLayout
 import com.grtc.gdibpm.R
 
@@ -18,7 +15,7 @@ class GestionActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_listado)
+        setContentView(R.layout.activity_managment)
 
         tabLayout = findViewById(R.id.tabLayout)
         viewPager = findViewById(R.id.viewpager)
