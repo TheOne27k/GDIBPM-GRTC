@@ -114,32 +114,57 @@
                     android:backgroundTint="@color/black"/>
             </LinearLayout>
             <TableLayout
-                android:layout_width="360dp"
-                android:layout_height="250dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:stretchColumns="*"
                 android:background="@color/gray_light"
                 >
                 <TableRow
-                    android:background="@color/gray">
-                    <TextView android:text="Codigo Patrim."
-                        android:layout_column="0"
-                        android:padding="5dp"/>
-                    <TextView android:text="Estado"
-                        android:layout_column="1"
-                        android:padding="5dp"/>
-                    <TextView android:text="Evidencia"
-                        android:layout_column="2"
-                        android:padding="5dp"/>
-                    <TextView android:text=""
-                        android:gravity="end"
-                        android:layout_column="3"
-                        android:padding="5dp"/>
-                </TableRow>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerHeritageAssets"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:listitem="@layout/item_heritage_asset"/>
+                    android:background="@color/gray"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Codigo Patrim."
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estado"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Evidencia"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+                </TableRow>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerHeritageAssets"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/item_heritage_asset"
+                        tools:itemCount="1"/>
+                </ScrollView>
 
             </TableLayout>
             <LinearLayout
