@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="230dp"
+        android:layout_width="300dp"
         android:layout_height="200dp"
         android:src="@drawable/logo_login"
         android:layout_marginBottom="16dp" />
@@ -21,10 +21,10 @@
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenido"
+        android:text="Iniciar Sesión"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:textColor="@color/blue_light"
         android:layout_marginBottom="16dp" />
 
     <com.google.android.material.textfield.TextInputLayout
