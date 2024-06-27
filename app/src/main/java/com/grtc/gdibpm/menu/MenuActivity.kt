@@ -13,7 +13,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.grtc.gdibpm.DisplacementRegisterActivity
+import com.grtc.gdibpm.displacement.DisplacementRegisterActivity
 import com.grtc.gdibpm.heritage_asset.HeritageAssetRegisterActivity
 import com.grtc.gdibpm.R
 import com.grtc.gdibpm.main.MainFragment

@@ -25,9 +25,9 @@
         </activity>
 
         <activity android:name=".menu.MenuActivity"/>
-        <activity android:name=".DisplacementRegisterActivity" />
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".FilterActivity"/>
+        <activity android:name=".displacement.DisplacementRegisterActivity" />
+        <activity android:name=".dashboard.DashboardActivity" />
+        <activity android:name=".displacement.FilterActivity"/>
         <activity android:name=".gestion_area_y_empleado.GestionActivity"/>
         <activity android:name=".heritage_asset.HeritageAssetRegisterActivity" />
         <activity android:name=".auth.ForgotPasswordActivity" />

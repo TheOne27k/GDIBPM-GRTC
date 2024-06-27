@@ -1,21 +1,12 @@
 package com.grtc.gdibpm.dashboard
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.grtc.gdibpm.R
 
-@Entity(tableName = "bienes_table")
-data class DashboardActivity(
-    @ColumnInfo(name = "id")
-    val id:Int,
-    @ColumnInfo(name = "nombre" )
-    val nombre:String,
-    @ColumnInfo(name = "area")
-    val area:String,
-    @ColumnInfo(name = "estado")
-    val estado:String,
-    @ColumnInfo (name = "fechaDesplazamiento")
-    val fechaDesplazamiento:String
-
-
-)
+class DashboardActivity:AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_dashboard)
+    }
+}
