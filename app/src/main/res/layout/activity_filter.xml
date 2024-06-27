@@ -21,6 +21,16 @@
             app:iconifiedByDefault="false"
             app:queryHint="Buscar aquí ..." />
     </com.google.android.material.card.MaterialCardView>
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerStates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_state"
+            tools:itemCount="1"/>
+    </HorizontalScrollView>
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
