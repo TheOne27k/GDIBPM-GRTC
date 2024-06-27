@@ -7,12 +7,6 @@ import androidx.room.PrimaryKey
 @Entity (tableName = "displacement_table")
 data class Displacement (
 
-    @ColumnInfo(name = "AreaOrigen_displacement")
-    val area_origen: String,
-
-    @ColumnInfo(name = "AreaDestino_displacement")
-    val area_destino: String,
-
     @ColumnInfo(name = "Remitente_displacement")
     val remitente: String,
 
@@ -26,7 +20,8 @@ data class Displacement (
     val fecha: String,
 
     @ColumnInfo(name = "estado")
-    val estado: DisplacementeStatus
+    val estado: DisplacementeStatus,
+    val isExpanded: Boolean = false
 
 ) {
     @PrimaryKey(autoGenerate = true)
