@@ -27,6 +27,7 @@ class GestionActivity: AppCompatActivity() {
         val vpAdapter = VPAdapter(supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
         vpAdapter.addFragment(empleadoFragment(), "Empleados")
         vpAdapter.addFragment(areaFragment(), "Área")
+        vpAdapter.addFragment(DisplacementFragment(), "Desplazamiento")
         viewPager.adapter = vpAdapter
 
 
