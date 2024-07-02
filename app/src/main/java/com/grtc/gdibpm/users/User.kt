@@ -6,26 +6,28 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "users")
 data class User(
-    @ColumnInfo(name = "nombre")
-    val nombre: String,
+    @ColumnInfo(name = "name")
+    val name: String,
 
-    @ColumnInfo(name = "apellido_paterno")
-    val apellidoPaterno: String,
-
-    @ColumnInfo(name = "apellido_materno")
-    val apellidoMaterno: String,
-
-    @ColumnInfo(name = "correo")
-    val correo: String,
+    @ColumnInfo(name = "lastname")
+    val lastname: String,
+    @ColumnInfo(name = "telephone_number")
+    val telephone_number: String,
 
     @ColumnInfo(name = "dni")
     val dni: String,
 
-    @ColumnInfo(name = "clave_secreta")
-    val claveSecreta: String,
+    @ColumnInfo(name = "email")
+    val email: String,
 
     @ColumnInfo(name = "contrasenia")
-    val contrasenia: String
+    val contrasenia: String,
+
+    @ColumnInfo(name = "area_ref")
+    val areaRef: String,
+
+    @ColumnInfo(name = "role")
+    val role:  UserRole
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "user_id")
