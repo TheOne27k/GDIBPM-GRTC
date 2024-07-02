@@ -1,4 +1,4 @@
-package com.grtc.gdibpm.gestion_area_y_empleado
+package com.grtc.gdibpm.management
 
 import android.content.Intent
 import android.os.Bundle
@@ -21,7 +21,7 @@ class empleadoFragment : Fragment() {
 
         btnAddEmpleado.setOnClickListener {
 
-            val intent = Intent(activity, empleadoClass::class.java)
+            val intent = Intent(activity, EmpleadoActivity::class.java)
             startActivity(intent)
         }
         return view

@@ -1,4 +1,4 @@
-package com.grtc.gdibpm.gestion_area_y_empleado
+package com.grtc.gdibpm.management
 
 import android.content.Intent
 import android.os.Bundle
@@ -23,7 +23,7 @@ class areaFragment : Fragment() {
 
         btnAddArea.setOnClickListener {
 
-            val intent = Intent(activity, areaClass::class.java)
+            val intent = Intent(activity, AreaActivity::class.java)
             startActivity(intent)
         }
         return view

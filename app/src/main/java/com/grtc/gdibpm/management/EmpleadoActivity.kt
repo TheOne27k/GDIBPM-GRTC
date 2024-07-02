@@ -1,12 +1,12 @@
-package com.grtc.gdibpm.gestion_area_y_empleado
+package com.grtc.gdibpm.management
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.grtc.gdibpm.R
 
-class empleadoClass: AppCompatActivity() {
+class EmpleadoActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_creaempleado)
+        setContentView(R.layout.activity_register_employee)
     }
 }

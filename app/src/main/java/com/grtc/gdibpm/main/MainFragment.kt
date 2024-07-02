@@ -10,7 +10,7 @@ import com.google.android.material.card.MaterialCardView
 import com.grtc.gdibpm.dashboard.DashboardActivity
 import com.grtc.gdibpm.displacement.FilterActivity
 import com.grtc.gdibpm.R
-import com.grtc.gdibpm.gestion_area_y_empleado.GestionActivity
+import com.grtc.gdibpm.management.GestionActivity
 
 class MainFragment : Fragment() {
     override fun onCreateView(

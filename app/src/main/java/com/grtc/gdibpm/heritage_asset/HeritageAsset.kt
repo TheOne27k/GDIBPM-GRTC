@@ -25,7 +25,7 @@ data class HeritageAsset (
     @ColumnInfo(name = "heritage_state")
     var HeritageState: HeritageState,
     @ColumnInfo(name = "heritage_evidence")
-    var HeritageEvidence: Int
+    var HeritageEvidence: String
 ){
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_heritage")

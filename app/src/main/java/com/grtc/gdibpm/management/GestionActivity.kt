@@ -1,4 +1,4 @@
-package com.grtc.gdibpm.gestion_area_y_empleado
+package com.grtc.gdibpm.management
 
 import VPAdapter
 import android.os.Bundle
