@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.grtc.gdibpm.R
 
 class HeritageViewHolder(inflater: LayoutInflater, viewGroup: ViewGroup) :
@@ -18,9 +19,13 @@ class HeritageViewHolder(inflater: LayoutInflater, viewGroup: ViewGroup) :
         heritageCode = itemView.findViewById(R.id.HeritageEvidence)
         heritageState = itemView.findViewById(R.id.HeritageState)
     }
-    fun bind(heritageAsset: HeritageAsset) {
+    fun data(heritageAsset: HeritageAsset) {
         heritageCode?.text = heritageAsset.HeritageCode
         heritageState?.text = heritageAsset.HeritageState.toString()
-        imgHeritage?.setImageResource(heritageAsset.HeritageEvidence)
+        imgHeritage?.let{
+            Glide.with(itemView.context)
+                .load(heritageAsset.HeritageEvidence)
+                .into(it)
+        }
     }
 }

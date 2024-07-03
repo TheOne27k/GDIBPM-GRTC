@@ -17,7 +17,7 @@ class Heritagedapter (val list: List<HeritageAsset>) :
 
     override fun onBindViewHolder(holder: HeritageViewHolder, position: Int) {
         val heritageAsset = list[position]
-        holder.bind(heritageAsset)
+        holder.data(heritageAsset)
     }
 
 }

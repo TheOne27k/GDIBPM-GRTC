@@ -43,6 +43,7 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.4.0")
 
     implementation("androidx.room:room-runtime:2.6.1")
+    implementation("com.google.firebase:firebase-storage-ktx:21.0.0")
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
 
@@ -56,6 +57,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-auth")
+    implementation ("com.google.firebase:firebase-storage")
 
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 
