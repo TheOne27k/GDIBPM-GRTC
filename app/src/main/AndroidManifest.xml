@@ -28,16 +28,16 @@
         <activity android:name=".displacement.DisplacementRegisterActivity" />
         <activity android:name=".dashboard.DashboardActivity" />
         <activity android:name=".displacement.FilterActivity"/>
-        <activity android:name=".gestion_area_y_empleado.GestionActivity"/>
+        <activity android:name=".management.GestionActivity"/>
         <activity android:name=".heritage_asset.HeritageAssetRegisterActivity" />
         <activity android:name=".auth.ForgotPasswordActivity" />
         <activity
-            android:name=".gestion_area_y_empleado.areaClass"
+            android:name=".management.AreaActivity"
             android:exported="true"
             android:theme="@style/Theme.Dibpm">
         </activity>
         <activity
-            android:name=".gestion_area_y_empleado.empleadoClass"
+            android:name=".management.EmpleadoActivity"
             android:exported="true"
             android:theme="@style/Theme.Dibpm">
         </activity>
