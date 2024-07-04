@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
 import com.grtc.gdibpm.R
-import com.grtc.gdibpm.management.GestionActivity
+import com.grtc.gdibpm.management.ManagementActivity
 
 class AreaActivity: AppCompatActivity(){
     private lateinit var areaViewModel: AreaViewModel
@@ -23,7 +23,7 @@ class AreaActivity: AppCompatActivity(){
             val areaName = edtAreaName.text.toString()
             val area = Area(id="", areaName)
             areaViewModel.registerArea(area)
-            Intent(this, GestionActivity::class.java).apply {
+            Intent(this, ManagementActivity::class.java).apply {
                 startActivity(this)
             }
         }

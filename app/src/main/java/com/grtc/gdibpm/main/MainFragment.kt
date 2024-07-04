@@ -10,7 +10,7 @@ import com.google.android.material.card.MaterialCardView
 import com.grtc.gdibpm.dashboard.DashboardActivity
 import com.grtc.gdibpm.displacement.FilterActivity
 import com.grtc.gdibpm.R
-import com.grtc.gdibpm.management.GestionActivity
+import com.grtc.gdibpm.management.ManagementActivity
 
 class MainFragment : Fragment() {
     override fun onCreateView(
@@ -36,7 +36,7 @@ class MainFragment : Fragment() {
             startActivity(intent)
         }
         cardManagment.setOnClickListener {
-            val intent = Intent(context, GestionActivity::class.java)
+            val intent = Intent(context, ManagementActivity::class.java)
             startActivity(intent)
         }
     }
