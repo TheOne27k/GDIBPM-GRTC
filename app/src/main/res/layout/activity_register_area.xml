@@ -10,12 +10,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crear Àrea"
+        android:text="Crear Área"
         android:textStyle="bold"
         android:textSize="20sp"
         android:textColor="@color/black"
         android:padding="16dp"
-        android:background="@color/gray_light"
         android:layout_marginBottom="32dp" />
 
     <LinearLayout
@@ -24,7 +23,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:padding="16dp"
-        android:background="@color/gray_light">
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,6 +40,7 @@
             android:layout_marginTop="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtAreaName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombre del Área"

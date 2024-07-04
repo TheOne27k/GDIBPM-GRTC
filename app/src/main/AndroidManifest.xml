@@ -32,7 +32,7 @@
         <activity android:name=".heritage_asset.HeritageAssetRegisterActivity" />
         <activity android:name=".auth.ForgotPasswordActivity" />
         <activity
-            android:name=".management.AreaActivity"
+            android:name=".management.area.AreaActivity"
             android:exported="true"
             android:theme="@style/Theme.Dibpm">
         </activity>

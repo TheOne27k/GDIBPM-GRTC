@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.grtc.gdibpm.R
+import com.grtc.gdibpm.management.area.AreaFragment
 
 class GestionActivity: AppCompatActivity() {
 
@@ -25,8 +26,8 @@ class GestionActivity: AppCompatActivity() {
 
         // Configurar el adaptador para ViewPager
         val vpAdapter = VPAdapter(supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
-        vpAdapter.addFragment(empleadoFragment(), "Empleados")
-        vpAdapter.addFragment(areaFragment(), "Área")
+        vpAdapter.addFragment(EmpleadoFragment(), "Empleados")
+        vpAdapter.addFragment(AreaFragment(), "Área")
         vpAdapter.addFragment(DisplacementFragment(), "Desplazamiento")
         viewPager.adapter = vpAdapter
 

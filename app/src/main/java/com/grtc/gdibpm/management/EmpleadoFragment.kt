@@ -9,14 +9,17 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.grtc.gdibpm.R
 
-class empleadoFragment : Fragment() {
+class EmpleadoFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view= inflater.inflate(R.layout.fragment_list_users, container, false)
+        return inflater.inflate(R.layout.fragment_list_users, container, false)
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val btnAddEmpleado = view.findViewById<Button>(R.id.btnAddEmpleado)
 
         btnAddEmpleado.setOnClickListener {
@@ -24,7 +27,6 @@ class empleadoFragment : Fragment() {
             val intent = Intent(activity, EmpleadoActivity::class.java)
             startActivity(intent)
         }
-        return view
     }
 
 }

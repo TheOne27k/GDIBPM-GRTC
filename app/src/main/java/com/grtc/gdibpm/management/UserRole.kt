@@ -1,4 +1,4 @@
-package com.grtc.gdibpm.users
+package com.grtc.gdibpm.management
 
 enum class UserRole(val  rolName: String) {
     ADMIN( "Administrador"),
