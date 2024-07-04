@@ -28,7 +28,7 @@
         <activity android:name=".displacement.DisplacementRegisterActivity" />
         <activity android:name=".dashboard.DashboardActivity" />
         <activity android:name=".displacement.FilterActivity"/>
-        <activity android:name=".management.GestionActivity"/>
+        <activity android:name=".management.ManagementActivity"/>
         <activity android:name=".heritage_asset.HeritageAssetRegisterActivity" />
         <activity android:name=".auth.ForgotPasswordActivity" />
         <activity
@@ -37,7 +37,7 @@
             android:theme="@style/Theme.Dibpm">
         </activity>
         <activity
-            android:name=".management.EmpleadoActivity"
+            android:name=".management.user.UserActivity"
             android:exported="true"
             android:theme="@style/Theme.Dibpm">
         </activity>
