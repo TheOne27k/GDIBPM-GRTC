@@ -92,7 +92,7 @@ class UserViewModel: ViewModel() {
                                     } catch (e: IllegalArgumentException) {
                                         UserRole.USER
                                     }
-                                    val user = User(name, lastname, telephone, dni, email, areaRef,areaName, role)
+                                    val user = User(id,name, lastname, telephone, dni, email, areaRef,areaName, role)
                                     listUsers.add(user)
                                     userMutable.postValue(listUsers)
                                 } else {

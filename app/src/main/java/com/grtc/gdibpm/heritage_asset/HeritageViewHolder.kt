@@ -9,23 +9,16 @@ import com.bumptech.glide.Glide
 import com.grtc.gdibpm.R
 
 class HeritageViewHolder(inflater: LayoutInflater, viewGroup: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.item_heritage_asset, viewGroup, false)){
-    private var imgHeritage: ImageView? = null
-    private var heritageCode: TextView? = null
-    private var heritageState: TextView? = null
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.item_heritage_asset, viewGroup, false)) {
+    private var imgHeritage: ImageView = itemView.findViewById(R.id.heritage_evidence)
+    private var heritageCode: TextView = itemView.findViewById(R.id.heritage_code)
+    private var heritageState: TextView = itemView.findViewById(R.id.heritage_state)
 
-    init {
-        imgHeritage = itemView.findViewById(R.id.HeritageCode)
-        heritageCode = itemView.findViewById(R.id.HeritageEvidence)
-        heritageState = itemView.findViewById(R.id.HeritageState)
-    }
     fun data(heritageAsset: HeritageAsset) {
-        heritageCode?.text = heritageAsset.HeritageCode
-        heritageState?.text = heritageAsset.HeritageState.toString()
-        imgHeritage?.let{
-            Glide.with(itemView.context)
-                .load(heritageAsset.HeritageEvidence)
-                .into(it)
-        }
+        heritageCode.text = heritageAsset.HeritageCode
+        heritageState.text = heritageAsset.HeritageState.toString()
+        Glide.with(itemView.context)
+            .load(heritageAsset.HeritageEvidence)
+            .into(imgHeritage)
     }
 }

@@ -8,8 +8,8 @@
     android:layout_gravity="center_horizontal">
     <TableRow>
         <TextView
-            android:id="@+id/HeritageCode"
-            android:layout_width="match_parent"
+            android:id="@+id/heritage_code"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text=""
@@ -17,24 +17,25 @@
             android:layout_gravity="center"/>
 
         <TextView
-            android:id="@+id/HeritageState"
-            android:layout_width="match_parent"
+            android:id="@+id/heritage_state"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:layout_gravity="center"/>
 
-        <TextView
-            android:id="@+id/HeritageEvidence"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/heritage_evidence"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
             android:layout_weight="1"
             android:text=""
             android:gravity="center"
+            android:src="@drawable/cambio_foto"
             android:layout_gravity="center"/>
 
         <LinearLayout
-            android:id="@+id/HeritageOptions"
+            android:id="@+id/heritage_options"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -43,7 +44,7 @@
             android:layout_gravity="end">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnUpdate"
+                android:id="@+id/btn_update"
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:backgroundTint="@color/blue"
@@ -54,7 +55,7 @@
                 />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnDelete"
+                android:id="@+id/btn_delete"
                 android:layout_width="40dp"
                 android:layout_marginLeft="3dp"
                 android:layout_height="50dp"

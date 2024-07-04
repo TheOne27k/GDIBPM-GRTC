@@ -4,20 +4,26 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class Heritagedapter (val list: List<HeritageAsset>) :
-    RecyclerView.Adapter<HeritageViewHolder>(){
+class HeritageAdapter(private val heritageList: MutableList<HeritageAsset>) :
+    RecyclerView.Adapter<HeritageViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeritageViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return HeritageViewHolder(inflater, parent)
     }
 
-    override fun getItemCount(): Int {
-        return list.size
-    }
-
     override fun onBindViewHolder(holder: HeritageViewHolder, position: Int) {
-        val heritageAsset = list[position]
-        holder.data(heritageAsset)
+        holder.data(heritageList[position])
     }
 
+    override fun getItemCount(): Int = heritageList.size
+
+    fun addItem(heritageAsset: HeritageAsset) {
+        heritageList.add(heritageAsset)
+        notifyItemInserted(heritageList.size - 1)
+    }
+
+    fun getItems(): List<HeritageAsset> {
+        return heritageList
+    }
 }

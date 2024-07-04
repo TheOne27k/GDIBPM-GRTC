@@ -10,7 +10,7 @@ import com.google.firebase.storage.StorageReference
 class HeritageViewModel : ViewModel() {
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val storageReference: StorageReference = FirebaseStorage.getInstance().reference
-    val heritageListMutable = MutableLiveData<HeritageAsset?>()
+    val heritageListMutable = MutableLiveData<HeritageAsset>()
 
     fun getHeritageByCode(code: String) {
         firestore.collection("heritageAsset")
@@ -39,13 +39,11 @@ class HeritageViewModel : ViewModel() {
                         heritageSerial,
                         heritageColor,
                         heritageState,
-                        heritageEvidence
+                        heritageEvidence,
+                        document.reference
                     )
                     heritageListMutable.value = heritage
                 }
-            }
-            .addOnFailureListener {
-                heritageListMutable.value = null
             }
     }
 
@@ -64,9 +62,6 @@ class HeritageViewModel : ViewModel() {
             .add(heritageMap)
             .addOnSuccessListener {
                 heritageListMutable.value = heritage
-            }
-            .addOnFailureListener {
-                heritageListMutable.value = null
             }
     }
 

@@ -71,7 +71,7 @@ class UserActivity : AppCompatActivity() {
             val areaId = areaIdMap[areaName]
             val areaRef = firestore.collection("areas").document(areaId!!)
 
-            val user = User(name, lastName, phone, dni, email, areaRef,areaName, role)
+            val user = User(id="",name, lastName, phone, dni, email, areaRef,areaName, role)
             userViewModel.verifyRegister(user, password, confirmPassword)
             Intent(this, ManagementActivity::class.java).apply {
                 startActivity(this)
