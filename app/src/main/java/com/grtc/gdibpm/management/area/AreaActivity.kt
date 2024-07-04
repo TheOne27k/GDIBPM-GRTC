@@ -1,11 +1,13 @@
 package com.grtc.gdibpm.management.area
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
 import com.grtc.gdibpm.R
+import com.grtc.gdibpm.management.GestionActivity
 
 class AreaActivity: AppCompatActivity(){
     private lateinit var areaViewModel: AreaViewModel
@@ -19,8 +21,14 @@ class AreaActivity: AppCompatActivity(){
         val btnCancel = findViewById<Button>(R.id.btnCancel)
         btnRegister.setOnClickListener {
             val areaName = edtAreaName.text.toString()
-            val area = Area(areaName)
+            val area = Area(id="", areaName)
             areaViewModel.registerArea(area)
+            Intent(this, GestionActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
+        btnCancel.setOnClickListener {
+            finish()
         }
 
     }

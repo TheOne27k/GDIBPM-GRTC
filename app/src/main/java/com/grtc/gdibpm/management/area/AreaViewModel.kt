@@ -19,7 +19,7 @@ class AreaViewModel: ViewModel(){
 
                     val name = data["name"] as String
 
-                    val area = Area(name)
+                    val area = Area(id,name)
                     listArea.add(area)
                 }
                 areaListMutable.postValue(listArea)
