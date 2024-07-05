@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -22,14 +21,14 @@
         app:layout_constraintVertical_bias="0.001">
 
         <TextView
-            android:id="@+id/name_textview"
+            android:id="@+id/NameUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="60dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="Joao Rojas Paredes"
+            android:text=""
             android:textAlignment="center"
             android:textColor="@color/headerTextColor"
             android:textSize="25sp"
@@ -39,7 +38,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
     android:id="@+id/user_imageview"
@@ -74,12 +78,12 @@
         app:layout_constraintVertical_bias="0.038">
 
         <TextView
-            android:id="@+id/occupation_textview"
+            android:id="@+id/areaName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Recursos Humanos"
+            android:text=""
             android:textColor="@color/colorAccent"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -87,18 +91,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/workplace_textview"
+            android:id="@+id/roleUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Asistente"
+            android:text=""
             android:textColor="@color/blue_light"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/occupation_textview" />
+            app:layout_constraintTop_toBottomOf="@+id/areaName" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -111,7 +115,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/workplace_textview">
+            app:layout_constraintTop_toBottomOf="@+id/roleUser">
 
             <ImageView
                 android:id="@+id/email_imageview"
@@ -121,29 +125,22 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_mail_black_24dp"
-
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.126"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/workplace_textview" />
+                app:layout_constraintHorizontal_bias="0.126" />
 
             <TextView
-                android:id="@+id/email_textview"
+                android:id="@+id/emailUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="8dp"
-                android:text="joaorojas680@gmail"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.031"
-                app:layout_constraintStart_toEndOf="@+id/email_imageview"
-                app:layout_constraintTop_toBottomOf="@+id/workplace_textview" />
+                app:layout_constraintHorizontal_bias="0.031" />
 
         </LinearLayout>
-
-
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
@@ -167,22 +164,19 @@
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.126"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_imageview" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/phone_textview"
+                android:id="@+id/phoneUser"
                 android:layout_width="239dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="184dp"
-                android:text="997269339"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.031"
-                app:layout_constraintStart_toEndOf="@+id/phone_imageview"
-                app:layout_constraintTop_toBottomOf="@+id/email_textview" />
+                app:layout_constraintHorizontal_bias="0.031" />
 
         </LinearLayout>
 
@@ -208,64 +202,19 @@
                 android:src="@drawable/profile_dni"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.126"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phone_imageview" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/video_textview"
+                android:id="@+id/dniUser"
                 android:layout_width="242dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="184dp"
-                android:text="76686545"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.031"
-                app:layout_constraintStart_toEndOf="@+id/video_imageview"
-                app:layout_constraintTop_toBottomOf="@+id/phone_textview" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
-
-            <ImageView
-                android:id="@+id/facebook_imageview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/profile_clave"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.126"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/video_textview" />
-
-            <TextView
-                android:id="@+id/facebook_textview1"
-                android:layout_width="336dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="184dp"
-                android:text="clave"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.031"
-                app:layout_constraintStart_toEndOf="@+id/facebook_imageview"
-                app:layout_constraintTop_toBottomOf="@+id/video_textview" />
+                app:layout_constraintHorizontal_bias="0.031" />
 
         </LinearLayout>
 
