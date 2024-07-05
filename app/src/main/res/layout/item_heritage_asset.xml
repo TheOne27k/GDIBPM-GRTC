@@ -11,7 +11,6 @@
             android:id="@+id/heritage_code"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text=""
             android:gravity="center"
             android:layout_gravity="center"/>
@@ -20,7 +19,7 @@
             android:id="@+id/heritage_state"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:text=""
             android:gravity="center"
             android:layout_gravity="center"/>
 
@@ -28,8 +27,6 @@
             android:id="@+id/heritage_evidence"
             android:layout_width="50dp"
             android:layout_height="70dp"
-            android:layout_weight="1"
-            android:text=""
             android:gravity="center"
             android:src="@drawable/image_placeholder"
             android:layout_gravity="center"/>
