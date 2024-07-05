@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.grtc.gdibpm.R
 
-class DisplacementAdapter(private val displacements: List<Displacement>) : RecyclerView.Adapter<DisplacementViewHolder>() {
+class DisplacementAdapter(private var displacements: List<Displacement>) : RecyclerView.Adapter<DisplacementViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DisplacementViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_displacement, parent, false)
@@ -21,4 +21,9 @@ class DisplacementAdapter(private val displacements: List<Displacement>) : Recyc
     }
 
     override fun getItemCount(): Int = displacements.size
+
+    fun updateDisplacements(newDisplacements: List<Displacement>) {
+        displacements = newDisplacements
+        notifyDataSetChanged()
+    }
 }

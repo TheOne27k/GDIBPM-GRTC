@@ -9,6 +9,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class DisplacementViewModel : ViewModel() {
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     val displacementListMutable = MutableLiveData<List<Displacement>>()
+    val filteredDisplacementListMutable = MutableLiveData<List<Displacement>?>()
     val registrationStatus = MutableLiveData<Boolean>()
 
     fun registerDisplacement(displacement: Displacement) {
@@ -56,6 +57,7 @@ class DisplacementViewModel : ViewModel() {
                                 displacement.receiverName = receiverName
                                 displacements.add(displacement)
                                 displacementListMutable.value = displacements
+                                filteredDisplacementListMutable.value = displacements
                             }
                         }
                     } else {
@@ -63,9 +65,26 @@ class DisplacementViewModel : ViewModel() {
                     }
                 }
                 displacementListMutable.value = displacements
+                filteredDisplacementListMutable.value = displacements
             }
             .addOnFailureListener {
                 displacementListMutable.value = emptyList()
+                filteredDisplacementListMutable.value = emptyList()
             }
     }
+
+    fun filterByState(state: DisplacementStatus) {
+        val filteredList = displacementListMutable.value?.filter { it.state == state }
+        filteredDisplacementListMutable.value = filteredList
+    }
+
+    fun showAllDisplacements() {
+        filteredDisplacementListMutable.value = displacementListMutable.value
+    }
+    fun filterByMotive(motive: String) {
+        filteredDisplacementListMutable.value = displacementListMutable.value?.filter {
+            it.motive.contains(motive, ignoreCase = true)
+        }
+    }
 }
+
