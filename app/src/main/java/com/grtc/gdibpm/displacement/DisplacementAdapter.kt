@@ -3,25 +3,22 @@ package com.grtc.gdibpm.displacement
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.grtc.gdibpm.R
 
-class DisplacementAdapter() :                                                                                                                                                                                                   RecyclerView.Adapter<DisplacementViewHolder>(){
-        private var heritageList = emptyList<Displacement>()
-        fun setHeritage(heritage: List<Displacement>){
-            heritageList = heritage
-            notifyDataSetChanged()
-        }
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DisplacementViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        return DisplacementViewHolder(inflater, parent)
+class DisplacementAdapter(private val displacements: List<Displacement>) : RecyclerView.Adapter<DisplacementViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DisplacementViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_displacement, parent, false)
+        return DisplacementViewHolder(view)
     }
-
-    override fun getItemCount(): Int {
-        return heritageList.size
-        }
 
     override fun onBindViewHolder(holder: DisplacementViewHolder, position: Int) {
-        val displacement = heritageList[position]
-        holder.data(displacement)
+        val displacement = displacements[position]
+        holder.bind(displacement) {
+            displacement.isExpanded = !displacement.isExpanded
+            notifyItemChanged(position)
+        }
     }
 
+    override fun getItemCount(): Int = displacements.size
 }

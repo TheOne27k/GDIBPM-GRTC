@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginTop="20dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
 
     <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/txtDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="textEnd"
-            android:text="12/04/2024"/>
+            android:text="12/04/2024"
+            android:textSize="14sp"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/DisplacementName"
@@ -31,7 +33,7 @@
                 android:text="Motivo:"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:padding="8dp"/>
+                android:paddingEnd="8dp"/>
 
             <TextView
                 android:id="@+id/txtMotive"
@@ -41,8 +43,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/DisplacementRemitente"
@@ -51,7 +54,7 @@
                 android:text="Empleado Origen:"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:padding="8dp"/>
+                android:paddingEnd="8dp"/>
 
             <TextView
                 android:id="@+id/txtSender"
@@ -61,8 +64,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/DisplacementReceptor"
@@ -71,7 +75,7 @@
                 android:text="Empleado Destino:"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:padding="8dp"/>
+                android:paddingEnd="8dp"/>
 
             <TextView
                 android:id="@+id/txtReceiver"
@@ -82,9 +86,9 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/DisplacementHeritage"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/item_heritage"
-            tools:itemCount="2"/>
+            android:visibility="gone"/>
+
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

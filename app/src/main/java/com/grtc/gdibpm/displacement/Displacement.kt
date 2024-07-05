@@ -14,7 +14,7 @@ data class Displacement(
     val state: DisplacementStatus = DisplacementStatus.IN_PROCESS,
     var senderName: String = "",
     var receiverName: String = "",
-    val isExpanded: Boolean = false
+    var isExpanded: Boolean = false
 ) {
     companion object {
         fun getCurrentDate(): String {
