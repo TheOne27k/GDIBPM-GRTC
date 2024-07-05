@@ -12,6 +12,8 @@ data class Displacement(
     val listHeritage: List<DocumentReference?>,
     val date: String = getCurrentDate(),
     val state: DisplacementStatus = DisplacementStatus.IN_PROCESS,
+    var senderName: String = "",
+    var receiverName: String = "",
     val isExpanded: Boolean = false
 ) {
     companion object {

@@ -12,26 +12,24 @@
         android:padding="8dp">
         <TextView
             android:id="@+id/MotiveDisplacement"
-            android:layout_width="match_parent"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text=""
             android:gravity="center"
             android:layout_gravity="center"/>
 
         <TextView
-            android:id="@+id/DisplacementRemitente"
-            android:layout_width="match_parent"
+            android:id="@+id/DisplacementSender"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center"
+            android:text=""
             android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/StateDisplacement"
-            android:layout_width="match_parent"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text=""
             android:gravity="center"
             android:layout_gravity="center"/>

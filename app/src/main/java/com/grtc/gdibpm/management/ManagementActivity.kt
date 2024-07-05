@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.grtc.gdibpm.R
 import com.grtc.gdibpm.management.area.AreaFragment
+import com.grtc.gdibpm.management.displacement.DisplacementFragment
 import com.grtc.gdibpm.management.user.UserFragment
 
 class ManagementActivity: AppCompatActivity() {
