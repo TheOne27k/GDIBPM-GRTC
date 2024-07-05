@@ -1,13 +1,9 @@
 package com.grtc.gdibpm.displacement
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.launch
 
 class DisplacementViewModel: ViewModel(){
     private lateinit var firestore: FirebaseFirestore
