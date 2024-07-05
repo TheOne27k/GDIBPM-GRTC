@@ -25,4 +25,11 @@ class LoginViewModel:ViewModel() {
                 userLoginStatus.value = it.isSuccessful
             }
     }
+    fun recoveryPassword(email: String) {
+        auth = FirebaseAuth.getInstance()
+        auth.sendPasswordResetEmail(email)
+            .addOnCompleteListener {
+                userLoginStatus.value = it.isSuccessful
+            }
+    }
 }
