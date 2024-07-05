@@ -1,45 +1,50 @@
-package com.grtc.gdibpm.management.area
-
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ListenerRegistration
+import com.grtc.gdibpm.management.area.Area
 
-class AreaViewModel: ViewModel(){
+class AreaViewModel : ViewModel() {
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     val areaListMutable = MutableLiveData<MutableList<Area>>()
+    private var listenerRegistration: ListenerRegistration? = null
 
-    fun getArea(){
-        firestore.collection("areas")
-            .get()
-            .addOnSuccessListener { result ->
+    init {
+        listenToAreaChanges()
+    }
+
+    fun listenToAreaChanges() {
+        listenerRegistration = firestore.collection("areas")
+            .addSnapshotListener { snapshots, error ->
+                if (error != null) {
+                    areaListMutable.postValue(mutableListOf())
+                    return@addSnapshotListener
+                }
+
                 val listArea = mutableListOf<Area>()
-                for(document in result) {
-                    val id = document.id
-                    val data = document.data
-
-                    val name = data["name"] as String
-
-                    val area = Area(id,name)
-                    listArea.add(area)
+                if (snapshots != null) {
+                    for (document in snapshots) {
+                        val id = document.id
+                        val data = document.data
+                        val name = data["name"] as String
+                        val area = Area(id, name)
+                        listArea.add(area)
+                    }
                 }
                 areaListMutable.postValue(listArea)
             }
-            .addOnFailureListener {
-                areaListMutable.postValue(mutableListOf())
-            }
     }
 
-    fun registerArea(area: Area){
+    fun registerArea(area: Area) {
         val areaMap = hashMapOf(
             "name" to area.name
         )
         firestore.collection("areas")
             .add(areaMap)
-            .addOnSuccessListener {
-                getArea()
-            }
-            .addOnFailureListener {
-                areaListMutable.postValue(mutableListOf())
-            }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        listenerRegistration?.remove()
     }
 }

@@ -1,6 +1,7 @@
 package com.grtc.gdibpm.heritage_asset
 
 import android.net.Uri
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
@@ -15,11 +16,15 @@ class HeritageViewModel : ViewModel() {
     fun getHeritageByCode(code: String) {
         firestore.collection("heritageAsset")
             .whereEqualTo("heritageCode", code)
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    val data = document.data
+            .addSnapshotListener { snapshots, e ->
+                if (e != null) {
+                    Log.w("HeritageViewModel", "Listen failed.", e)
+                    return@addSnapshotListener
+                }
 
+                val heritageList = mutableListOf<HeritageAsset>()
+                for (document in snapshots!!) {
+                    val data = document.data
                     val heritageCode = data["heritageCode"] as String
                     val heritageName = data["name"] as String
                     val heritageBrand = data["brand"] as String
@@ -30,7 +35,6 @@ class HeritageViewModel : ViewModel() {
                     val heritageEvidence = data["evidence"] as String
 
                     val heritageState = HeritageState.valueOf(heritageStateString)
-
                     val heritage = HeritageAsset(
                         heritageCode,
                         heritageName,
@@ -42,8 +46,9 @@ class HeritageViewModel : ViewModel() {
                         heritageEvidence,
                         document.reference
                     )
-                    heritageListMutable.value = heritage
+                    heritageList.add(heritage)
                 }
+                heritageListMutable.value = heritageList.firstOrNull()
             }
     }
 
@@ -61,7 +66,7 @@ class HeritageViewModel : ViewModel() {
         firestore.collection("heritageAsset")
             .add(heritageMap)
             .addOnSuccessListener {
-                heritageListMutable.value = heritage
+                Log.d("HeritageViewModel", "Heritage asset added successfully")
             }
     }
 

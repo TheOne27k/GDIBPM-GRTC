@@ -33,7 +33,7 @@ class UserFragment : Fragment() {
         userViewModel.userMutable.observe(viewLifecycleOwner, Observer { user ->
             adapter.setUsers(user)
         })
-        userViewModel.getUsers()
+        userViewModel.listenForUserUpdates()
 
         btnAddEmpleado.setOnClickListener {
 

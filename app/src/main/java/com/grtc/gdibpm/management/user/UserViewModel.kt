@@ -63,17 +63,22 @@ class UserViewModel: ViewModel() {
                 registrationStatus.value = false
             }
     }
-    fun getUsers() {
+    fun listenForUserUpdates() {
         firestore = FirebaseFirestore.getInstance()
-        firestore.collection("users")
-            .get()
-            .addOnSuccessListener { result ->
+        firestore.collection("users").addSnapshotListener { snapshot, e ->
+            if (e != null) {
+                Log.w(TAG, "Listen failed.", e)
+                userMutable.value = mutableListOf()
+                return@addSnapshotListener
+            }
+
+            if (snapshot != null && !snapshot.isEmpty) {
                 val listUsers = mutableListOf<User>()
-                for (document in result) {
+                for (document in snapshot.documents) {
                     val id = document.id
                     val data = document.data
 
-                    val name = data["name"] as String
+                    val name = data?.get("name") as String
                     val lastname = data["lastname"] as String
                     val email = data["email"] as String
                     val roleString = data["role"] as String
@@ -92,7 +97,7 @@ class UserViewModel: ViewModel() {
                                     } catch (e: IllegalArgumentException) {
                                         UserRole.USER
                                     }
-                                    val user = User(id,name, lastname, telephone, dni, email, areaRef,areaName, role)
+                                    val user = User(id, name, lastname, telephone, dni, email, areaRef, areaName, role)
                                     listUsers.add(user)
                                     userMutable.postValue(listUsers)
                                 } else {
@@ -106,15 +111,11 @@ class UserViewModel: ViewModel() {
                         Log.w(TAG, "areaRef es nulo para el usuario $name")
                     }
                 }
-                if (listUsers.isNotEmpty()) {
-                    userMutable.postValue(listUsers)
-                } else {
-                    Log.w(TAG, "No se encontraron usuarios en la base de datos.")
-                }
+                userMutable.postValue(listUsers)
+            } else {
+                Log.d(TAG, "Current data: null")
+                userMutable.value = mutableListOf()
             }
-            .addOnFailureListener { exception ->
-                userMutable.postValue(mutableListOf())
-                Log.e(TAG, "Error al obtener la lista de usuarios", exception)
-            }
+        }
     }
 }

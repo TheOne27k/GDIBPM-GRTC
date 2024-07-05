@@ -1,15 +1,15 @@
 package com.grtc.gdibpm.management.area
 
-import android.content.Intent
+import AreaViewModel
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
 import com.grtc.gdibpm.R
-import com.grtc.gdibpm.management.ManagementActivity
+import com.grtc.gdibpm.management.area.Area
 
-class AreaActivity: AppCompatActivity(){
+class AreaActivity : AppCompatActivity() {
     private lateinit var areaViewModel: AreaViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,17 +19,16 @@ class AreaActivity: AppCompatActivity(){
         val edtAreaName = findViewById<TextInputEditText>(R.id.edtAreaName)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
         val btnCancel = findViewById<Button>(R.id.btnCancel)
+
         btnRegister.setOnClickListener {
             val areaName = edtAreaName.text.toString()
-            val area = Area(id="", areaName)
+            val area = Area(id = "", areaName)
             areaViewModel.registerArea(area)
-            Intent(this, ManagementActivity::class.java).apply {
-                startActivity(this)
-            }
-        }
-        btnCancel.setOnClickListener {
-            finish()
+            finish() // Finaliza la actividad actual para volver a la actividad anterior
         }
 
+        btnCancel.setOnClickListener {
+            finish() // Finaliza la actividad actual
+        }
     }
 }

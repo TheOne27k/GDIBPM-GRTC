@@ -24,8 +24,8 @@ class DisplacementRegisterActivity : AppCompatActivity() {
     private lateinit var displacementViewModel: DisplacementViewModel
     private val heritageViewModel: HeritageViewModel by viewModels()
     private lateinit var heritageAdapter: HeritageAdapter
-    private lateinit var firestore: FirebaseFirestore
     private lateinit var userViewModel: UserViewModel
+    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private lateinit var userIdMap: Map<String, String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +34,6 @@ class DisplacementRegisterActivity : AppCompatActivity() {
         binding = ActivityDisplacementRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         displacementViewModel = ViewModelProvider(this)[DisplacementViewModel::class.java]
-        firestore = FirebaseFirestore.getInstance()
 
         setupRecyclerView()
         setupObservers()
@@ -55,7 +54,7 @@ class DisplacementRegisterActivity : AppCompatActivity() {
         edtReceiver.dropDownHeight = resources.getDimensionPixelSize(R.dimen.dropdown_max_height)
 
         userViewModel = ViewModelProvider(this)[UserViewModel::class.java]
-        userViewModel.getUsers()
+        userViewModel.listenForUserUpdates()
         userViewModel.userMutable.observe(this, Observer { users ->
             userAdapter.clear()
             userAdapter.addAll(users.map { "${it.name} ${it.lastname}" })

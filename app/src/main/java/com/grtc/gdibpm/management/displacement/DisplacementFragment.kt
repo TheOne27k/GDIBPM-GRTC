@@ -13,7 +13,7 @@ import com.grtc.gdibpm.R
 import com.grtc.gdibpm.displacement.DisplacementViewModel
 
 class DisplacementFragment : Fragment() {
-    private lateinit var displacementsViewModel: DisplacementViewModel
+    private lateinit var displacementViewModel: DisplacementViewModel
     private lateinit var adapter: DisplacementsAdapter
 
     override fun onCreateView(
@@ -25,20 +25,20 @@ class DisplacementFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        displacementsViewModel = ViewModelProvider(this)[DisplacementViewModel::class.java]
+        displacementViewModel = ViewModelProvider(this)[DisplacementViewModel::class.java]
 
         val recyclerDisplacement = view.findViewById<RecyclerView>(R.id.recyclerDisplacements)
         recyclerDisplacement.layoutManager = LinearLayoutManager(context)
         adapter = DisplacementsAdapter()
         recyclerDisplacement.adapter = adapter
 
-        displacementsViewModel.displacementListMutable.observe(viewLifecycleOwner, Observer { displacements ->
+        displacementViewModel.displacementListMutable.observe(viewLifecycleOwner, Observer { displacements ->
             if (displacements != null) {
                 adapter.setDisplacements(displacements)
             }
         })
 
-        displacementsViewModel.getDisplacements()
+        displacementViewModel.getDisplacements()
     }
 
     companion object {

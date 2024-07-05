@@ -1,5 +1,6 @@
 package com.grtc.gdibpm.management
 
+import AreaFragment
 import VPAdapter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +8,6 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.grtc.gdibpm.R
-import com.grtc.gdibpm.management.area.AreaFragment
 import com.grtc.gdibpm.management.displacement.DisplacementFragment
 import com.grtc.gdibpm.management.user.UserFragment
 

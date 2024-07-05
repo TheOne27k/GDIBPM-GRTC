@@ -1,5 +1,3 @@
-package com.grtc.gdibpm.management.area
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,10 +10,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.grtc.gdibpm.R
-
+import com.grtc.gdibpm.management.area.AreaActivity
+import com.grtc.gdibpm.management.area.AreaAdapter
 
 class AreaFragment : Fragment() {
     private lateinit var areaViewModel: AreaViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,17 +33,15 @@ class AreaFragment : Fragment() {
         areaViewModel.areaListMutable.observe(viewLifecycleOwner, Observer { areas ->
             adapter.setArea(areas)
         })
-        areaViewModel.getArea()
 
         val btnAddArea = view.findViewById<Button>(R.id.btnAddArea)
-
         btnAddArea.setOnClickListener {
             val intent = Intent(activity, AreaActivity::class.java)
             startActivity(intent)
         }
     }
+
     companion object {
         fun newInstance(): AreaFragment = AreaFragment()
     }
-
 }

@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -58,6 +59,12 @@ class HeritageAssetRegisterActivity : AppCompatActivity() {
         btnCancel.setOnClickListener {
             finish()
         }
+
+        // Observa los cambios en los datos del patrimonio
+        heritageViewModel.heritageListMutable.observe(this, Observer { heritageList ->
+            // Puedes implementar lógica aquí para actualizar la interfaz de usuario si es necesario
+            Log.d("HeritageActivity", "Heritage list updated: $heritageList")
+        })
     }
 
     private fun registerHeritageAsset() {

@@ -34,17 +34,21 @@ class DisplacementViewModel : ViewModel() {
 
     fun getDisplacements() {
         firestore.collection("displacements")
-            .get()
-            .addOnSuccessListener { result ->
+            .addSnapshotListener { snapshot, error ->
+                if (error != null) {
+                    Log.e("Firestore", "Error fetching displacements", error)
+                    return@addSnapshotListener
+                }
+
                 val displacements = mutableListOf<Displacement>()
-                for (document in result) {
+                snapshot?.documents?.forEach { document ->
                     val data = document.data
-                    val date = data["date"] as? String ?: ""
-                    val heritage = data["heritage"] as? List<DocumentReference> ?: emptyList()
-                    val motive = data["motive"] as? String ?: ""
-                    val receiverRef = data["receiver"] as? DocumentReference
-                    val senderRef = data["sender"] as? DocumentReference
-                    val stateStr = data["state"] as? String ?: DisplacementStatus.IN_PROCESS.name
+                    val date = data?.get("date") as? String ?: ""
+                    val heritage = data?.get("heritage") as? List<DocumentReference> ?: emptyList()
+                    val motive = data?.get("motive") as? String ?: ""
+                    val receiverRef = data?.get("receiver") as? DocumentReference
+                    val senderRef = data?.get("sender") as? DocumentReference
+                    val stateStr = data?.get("state") as? String ?: DisplacementStatus.IN_PROCESS.name
 
                     if (receiverRef != null && senderRef != null) {
                         senderRef.get().addOnSuccessListener { senderSnapshot ->
@@ -64,12 +68,6 @@ class DisplacementViewModel : ViewModel() {
                         Log.e("Firestore", "Receiver or Sender is null")
                     }
                 }
-                displacementListMutable.value = displacements
-                filteredDisplacementListMutable.value = displacements
-            }
-            .addOnFailureListener {
-                displacementListMutable.value = emptyList()
-                filteredDisplacementListMutable.value = emptyList()
             }
     }
 
@@ -81,10 +79,10 @@ class DisplacementViewModel : ViewModel() {
     fun showAllDisplacements() {
         filteredDisplacementListMutable.value = displacementListMutable.value
     }
+
     fun filterByMotive(motive: String) {
         filteredDisplacementListMutable.value = displacementListMutable.value?.filter {
             it.motive.contains(motive, ignoreCase = true)
         }
     }
 }
-

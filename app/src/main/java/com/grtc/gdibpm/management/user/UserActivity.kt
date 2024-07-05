@@ -1,5 +1,6 @@
 package com.grtc.gdibpm.management.user
 
+import AreaViewModel
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -12,7 +13,6 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.FirebaseFirestore
 import com.grtc.gdibpm.R
 import com.grtc.gdibpm.management.ManagementActivity
-import com.grtc.gdibpm.management.area.AreaViewModel
 
 class UserActivity : AppCompatActivity() {
     private lateinit var userViewModel: UserViewModel
@@ -42,7 +42,7 @@ class UserActivity : AppCompatActivity() {
             areaIdMap = areas.associate { it.name to it.id }
             areaAdapter.notifyDataSetChanged()
         })
-        areaViewModel.getArea()
+        areaViewModel.listenToAreaChanges()
 
         userViewModel = ViewModelProvider(this)[UserViewModel::class.java]
 
