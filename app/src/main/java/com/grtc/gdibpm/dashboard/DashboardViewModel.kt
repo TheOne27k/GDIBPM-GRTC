@@ -5,5 +5,4 @@ import androidx.lifecycle.AndroidViewModel
 
 class DashboardViewModel(application: Application):AndroidViewModel(application) {
 
-    private val repository= DashboardRepository(application)
 }
