@@ -22,8 +22,8 @@ class HeritageViewModel : ViewModel() {
                 validationError.value = "El código del patrimonio no puede estar vacío"
                 registrationStatus.value = false
             }
-            heritage.HeritageCode.length != 13 -> {
-                validationError.value = "El código del patrimonio debe tener 13 caracteres"
+            heritage.HeritageCode.length != 12 -> {
+                validationError.value = "El código del patrimonio debe tener 12 caracteres"
                 registrationStatus.value = false
             }
             else -> {

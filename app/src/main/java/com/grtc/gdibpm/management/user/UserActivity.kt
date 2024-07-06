@@ -4,6 +4,7 @@ import AreaViewModel
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -76,9 +77,17 @@ class UserActivity : AppCompatActivity() {
             Intent(this, ManagementActivity::class.java).apply {
                 startActivity(this)
             }
+            userViewModel.validationError.observe(this, Observer { error ->
+                error?.let {
+                    showToast(it)
+                }
+            })
         }
         btnCancel.setOnClickListener {
             finish()
         }
+    }
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

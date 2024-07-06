@@ -13,18 +13,29 @@ class UserViewModel: ViewModel() {
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
     val userMutable = MutableLiveData<MutableList<User>>()
+    val validationError = MutableLiveData<String>()
 
     val registrationStatus = MutableLiveData<Boolean>()
     fun verifyRegister(user: User, password: String, confirmPassword: String){
-        if(user.email.isEmpty() && password.isEmpty() && confirmPassword.isEmpty()){
-            registrationStatus.value = false
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(user.email).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(user.email).matches()) {
             registrationStatus.value = false
         } else if (password.length < 5) {
+            validationError.value = "La contraseña debe tener al menos 5 caracteres"
             registrationStatus.value = false
         } else if (password != confirmPassword) {
+            validationError.value = "Las contraseñas no coinciden"
             registrationStatus.value = false
-        } else {
+        }else if (user.dni.length != 8) {
+            validationError.value = "El dni debe tener 8 caracteres"
+            registrationStatus.value = false
+        }else if (user.telephone_number.length != 9) {
+            validationError.value = "El número de teléfono debe tener 9 caracteres"
+            registrationStatus.value = false
+        }else if (user.name.isEmpty() && user.lastname.isEmpty() && user.email.isEmpty() && user.dni.isEmpty() && user.telephone_number.isEmpty()){
+            validationError.value = "Todos los campos son requeridos"
+            registrationStatus.value = false
+        }
+        else {
             registerFirebase(user , password)
         }
     }
@@ -101,11 +112,11 @@ class UserViewModel: ViewModel() {
                                     listUsers.add(user)
                                     userMutable.postValue(listUsers)
                                 } else {
-                                    Log.w(TAG, "Nombre del área es nulo para el usuario $name")
+                                    validationError.value = "El nombre del área es nulo para el usuario"
                                 }
                             }
                             .addOnFailureListener { exception ->
-                                Log.e(TAG, "Error al obtener el nombre del área para el usuario $name", exception)
+                                validationError.value = "Error al obtener el nombre del área para el usuario"
                             }
                     } else {
                         Log.w(TAG, "areaRef es nulo para el usuario $name")
