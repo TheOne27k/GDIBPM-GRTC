@@ -47,4 +47,17 @@ class AreaViewModel : ViewModel() {
         super.onCleared()
         listenerRegistration?.remove()
     }
+
+    fun deleteArea(area: Area) {
+        // Eliminar el área de Firestore
+        firestore.collection("areas")
+            .document(area.id)
+            .delete()
+            .addOnSuccessListener {
+                // Opcional: Manejar éxito si es necesario
+            }
+            .addOnFailureListener { e ->
+                // Opcional: Manejar error si es necesario
+            }
+    }
 }

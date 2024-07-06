@@ -1,4 +1,6 @@
-import android.content.Intent
+package com.grtc.gdibpm.management.area
+
+import AreaViewModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +12,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.grtc.gdibpm.R
-import com.grtc.gdibpm.management.area.AreaActivity
-import com.grtc.gdibpm.management.area.AreaAdapter
 
 class AreaFragment : Fragment() {
     private lateinit var areaViewModel: AreaViewModel
+    private lateinit var adapter: AreaAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,19 +26,25 @@ class AreaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        areaViewModel = ViewModelProvider(this)[AreaViewModel::class.java]
+
+        areaViewModel = ViewModelProvider(this).get(AreaViewModel::class.java)
+
         val recyclerArea = view.findViewById<RecyclerView>(R.id.recyclerArea)
-        val adapter = AreaAdapter()
+        adapter = AreaAdapter { position ->
+            val areaToDelete = adapter.getItem(position)
+            areaViewModel.deleteArea(areaToDelete)
+        }
+
         recyclerArea.adapter = adapter
         recyclerArea.layoutManager = LinearLayoutManager(activity)
+
         areaViewModel.areaListMutable.observe(viewLifecycleOwner, Observer { areas ->
-            adapter.setArea(areas)
+            areas?.let { adapter.setArea(it) }
         })
 
         val btnAddArea = view.findViewById<Button>(R.id.btnAddArea)
         btnAddArea.setOnClickListener {
-            val intent = Intent(activity, AreaActivity::class.java)
-            startActivity(intent)
+            // Lógica para agregar nueva área
         }
     }
 
