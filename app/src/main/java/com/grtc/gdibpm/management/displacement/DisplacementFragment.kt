@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.grtc.gdibpm.R
+import com.grtc.gdibpm.displacement.DisplacementStatus
 import com.grtc.gdibpm.displacement.DisplacementViewModel
 
 class DisplacementFragment : Fragment() {
@@ -29,12 +30,22 @@ class DisplacementFragment : Fragment() {
 
         val recyclerDisplacement = view.findViewById<RecyclerView>(R.id.recyclerDisplacements)
         recyclerDisplacement.layoutManager = LinearLayoutManager(context)
-        adapter = DisplacementsAdapter()
+
+        adapter = DisplacementsAdapter(
+            onUpdateClick = { displacement ->
+                displacement.state = DisplacementStatus.SUCCESS
+                displacementViewModel.updateDisplacement(displacement)
+            },
+            onDeleteClick = { displacement ->
+                displacement.state = DisplacementStatus.CANCEL
+                displacementViewModel.updateDisplacement(displacement)
+            }
+        )
         recyclerDisplacement.adapter = adapter
 
-        displacementViewModel.displacementListMutable.observe(viewLifecycleOwner, Observer { displacements ->
-            if (displacements != null) {
-                adapter.setDisplacements(displacements)
+        displacementViewModel.filteredDisplacementListMutable.observe(viewLifecycleOwner, Observer { displacements ->
+            displacements?.let {
+                adapter.setDisplacements(it)
             }
         })
 

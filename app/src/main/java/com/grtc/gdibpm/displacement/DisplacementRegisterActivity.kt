@@ -117,6 +117,7 @@ class DisplacementRegisterActivity : AppCompatActivity() {
             }
 
             val displacement = Displacement(
+                id = "",
                 sender = senderRef,
                 receiver = receiverRef,
                 motive = motive,

@@ -9,8 +9,12 @@ import com.google.firebase.firestore.FirebaseFirestore
 class DisplacementViewModel : ViewModel() {
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     val displacementListMutable = MutableLiveData<List<Displacement>>()
-    val filteredDisplacementListMutable = MutableLiveData<List<Displacement>?>()
+    val filteredDisplacementListMutable = MutableLiveData<List<Displacement>>()
     val registrationStatus = MutableLiveData<Boolean>()
+
+    init {
+        getDisplacements() // Fetch displacements initially
+    }
 
     fun registerDisplacement(displacement: Displacement) {
         val displacementMap = hashMapOf(
@@ -56,12 +60,12 @@ class DisplacementViewModel : ViewModel() {
                             receiverRef.get().addOnSuccessListener { receiverSnapshot ->
                                 val receiverName = receiverSnapshot.getString("name") ?: "Unknown Receiver"
                                 val state = DisplacementStatus.valueOf(stateStr)
-                                val displacement = Displacement(senderRef, receiverRef, motive, heritage, date, state)
+                                val displacement = Displacement(id = document.id, senderRef, receiverRef, motive, heritage, date, state)
                                 displacement.senderName = senderName
                                 displacement.receiverName = receiverName
                                 displacements.add(displacement)
                                 displacementListMutable.value = displacements
-                                filteredDisplacementListMutable.value = displacements
+                                filterByState(DisplacementStatus.IN_PROCESS) // Filter initially by IN_PROCESS state
                             }
                         }
                     } else {
@@ -71,9 +75,21 @@ class DisplacementViewModel : ViewModel() {
             }
     }
 
+    fun updateDisplacement(displacement: Displacement) {
+        firestore.collection("displacements")
+            .document(displacement.id)
+            .set(displacement)
+            .addOnSuccessListener {
+                Log.d("DisplacementViewModel", "Displacement updated successfully")
+            }
+            .addOnFailureListener { e ->
+                Log.e("DisplacementViewModel", "Error updating displacement", e)
+            }
+    }
+
     fun filterByState(state: DisplacementStatus) {
         val filteredList = displacementListMutable.value?.filter { it.state == state }
-        filteredDisplacementListMutable.value = filteredList
+        filteredDisplacementListMutable.value = filteredList.orEmpty()
     }
 
     fun showAllDisplacements() {
@@ -86,3 +102,4 @@ class DisplacementViewModel : ViewModel() {
         }
     }
 }
+

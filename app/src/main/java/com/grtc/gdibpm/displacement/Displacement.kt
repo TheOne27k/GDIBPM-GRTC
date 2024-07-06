@@ -6,12 +6,13 @@ import java.util.Date
 import java.util.Locale
 
 data class Displacement(
+    val id: String,
     val sender: DocumentReference,
     val receiver: DocumentReference,
     val motive: String,
     val listHeritage: List<DocumentReference?>,
     val date: String = getCurrentDate(),
-    val state: DisplacementStatus = DisplacementStatus.IN_PROCESS,
+    var state: DisplacementStatus = DisplacementStatus.IN_PROCESS,
     var senderName: String = "",
     var receiverName: String = "",
     var isExpanded: Boolean = false
