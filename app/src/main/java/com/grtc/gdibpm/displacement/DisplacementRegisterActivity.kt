@@ -128,4 +128,5 @@ class DisplacementRegisterActivity : AppCompatActivity() {
             // Manejar error si los campos son nulos
         }
     }
+
 }

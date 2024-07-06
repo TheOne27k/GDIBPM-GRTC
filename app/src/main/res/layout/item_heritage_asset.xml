@@ -40,16 +40,16 @@
             android:gravity="center"
             android:layout_gravity="end">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_update"
-                android:layout_width="40dp"
-                android:layout_height="50dp"
-                android:backgroundTint="@color/blue"
-                app:icon="@drawable/pencil_svgrepo_com"
-                app:iconSize="30dp"
-                android:gravity="center"
-                app:iconGravity="textTop"
-                />
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/btn_update"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:backgroundTint="@color/blue"-->
+<!--                app:icon="@drawable/pencil_svgrepo_com"-->
+<!--                app:iconSize="30dp"-->
+<!--                android:gravity="center"-->
+<!--                app:iconGravity="textTop"-->
+<!--                />-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_delete"

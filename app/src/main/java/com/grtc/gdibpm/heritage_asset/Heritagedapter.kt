@@ -13,7 +13,9 @@ class HeritageAdapter(private val heritageList: MutableList<HeritageAsset>) :
     }
 
     override fun onBindViewHolder(holder: HeritageViewHolder, position: Int) {
-        holder.data(heritageList[position])
+        holder.data(heritageList[position]) { position ->
+            removeItem(position)
+        }
     }
 
     override fun getItemCount(): Int = heritageList.size
@@ -21,6 +23,12 @@ class HeritageAdapter(private val heritageList: MutableList<HeritageAsset>) :
     fun addItem(heritageAsset: HeritageAsset) {
         heritageList.add(heritageAsset)
         notifyItemInserted(heritageList.size - 1)
+    }
+
+    fun removeItem(position: Int) {
+        heritageList.removeAt(position)
+        notifyItemRemoved(position)
+        notifyItemRangeChanged(position, heritageList.size)
     }
 
     fun getItems(): List<HeritageAsset> {
