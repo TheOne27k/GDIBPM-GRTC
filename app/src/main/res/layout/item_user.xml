@@ -42,27 +42,27 @@
             android:gravity="center"
             android:layout_gravity="center">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnUpdate"
-                android:layout_width="40dp"
-                android:layout_height="50dp"
-                android:backgroundTint="@color/blue"
-                app:icon="@drawable/pencil_svgrepo_com"
-                app:iconSize="30dp"
-                android:gravity="center"
-                app:iconGravity="textTop"
-                />
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/btnUpdate"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:backgroundTint="@color/blue"-->
+<!--                app:icon="@drawable/pencil_svgrepo_com"-->
+<!--                app:iconSize="30dp"-->
+<!--                android:gravity="center"-->
+<!--                app:iconGravity="textTop"-->
+<!--                />-->
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnDelete"
-                android:layout_width="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_height="50dp"
-                app:icon="@drawable/trash_bin_minimalistic_svgrepo_com"
-                android:backgroundTint="@color/red"
-                app:iconSize="30dp"
-                android:gravity="center"
-                app:iconGravity="textTop"/>
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/btnDelete"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                app:icon="@drawable/trash_bin_minimalistic_svgrepo_com"-->
+<!--                android:backgroundTint="@color/red"-->
+<!--                app:iconSize="30dp"-->
+<!--                android:gravity="center"-->
+<!--                app:iconGravity="textTop"/>-->
 
         </LinearLayout>
     </TableRow>
