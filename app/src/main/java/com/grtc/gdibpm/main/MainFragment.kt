@@ -23,14 +23,14 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val cardDashboard = view.findViewById<MaterialCardView>(R.id.cardDashboard)
+//        val cardDashboard = view.findViewById<MaterialCardView>(R.id.cardDashboard)
         val cardDisplacement = view.findViewById<MaterialCardView>(R.id.cardDisplacement)
         val cardManagment = view.findViewById<MaterialCardView>(R.id.cardManagment)
 
-        cardDashboard.setOnClickListener {
-            val intent = Intent(context, DashboardActivity::class.java)
-            startActivity(intent)
-        }
+//        cardDashboard.setOnClickListener {
+//            val intent = Intent(context, DashboardActivity::class.java)
+//            startActivity(intent)
+//        }
         cardDisplacement.setOnClickListener {
             val intent = Intent(context, FilterActivity::class.java)
             startActivity(intent)
