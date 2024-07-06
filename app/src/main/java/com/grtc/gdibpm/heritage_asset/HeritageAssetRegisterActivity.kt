@@ -6,10 +6,10 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -18,6 +18,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputEditText
 import com.grtc.gdibpm.R
+import com.grtc.gdibpm.main.MainFragment
 
 class HeritageAssetRegisterActivity : AppCompatActivity() {
 
@@ -37,12 +38,6 @@ class HeritageAssetRegisterActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this, R.layout.dropdown_menu_popup_item, items)
 
         imagePreview = findViewById(R.id.imgEvidence)
-        val edtCode = findViewById<TextInputEditText>(R.id.edtCode)
-        val edtName = findViewById<TextInputEditText>(R.id.edtName)
-        val edtBrand = findViewById<TextInputEditText>(R.id.edtBrand)
-        val edtModel = findViewById<TextInputEditText>(R.id.edtModel)
-        val edtSerial = findViewById<TextInputEditText>(R.id.edtSerial)
-        val edtColor = findViewById<TextInputEditText>(R.id.edtColor)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
         val edtState = findViewById<MaterialAutoCompleteTextView>(R.id.edtState)
         edtState.setAdapter(adapter)
@@ -60,10 +55,19 @@ class HeritageAssetRegisterActivity : AppCompatActivity() {
             finish()
         }
 
-        // Observa los cambios en los datos del patrimonio
         heritageViewModel.heritageListMutable.observe(this, Observer { heritageList ->
-            // Puedes implementar lógica aquí para actualizar la interfaz de usuario si es necesario
-            Log.d("HeritageActivity", "Heritage list updated: $heritageList")
+            showToast("La lista de bienes fue actualizada: $heritageList")
+        })
+
+        heritageViewModel.validationError.observe(this, Observer { error ->
+            error?.let {
+                showToast(it)
+            }
+        })
+        heritageViewModel.registrationStatus.observe(this, Observer { isSuccess ->
+            if (isSuccess == true) {
+                redirectToMainPage()
+            }
         })
     }
 
@@ -84,31 +88,27 @@ class HeritageAssetRegisterActivity : AppCompatActivity() {
         val color = edtColor.text.toString().trim()
         val stateDisplayName = edtState.text.toString().trim()
 
-        // Encuentra el enum correspondiente
         val stateEnum = HeritageState.values().find { it.displayName == stateDisplayName }
 
         if (stateEnum == null) {
-            Log.d("RegisterHeritage", "Estado no válido: $stateDisplayName")
+            showToast("Estado no válido: $stateDisplayName")
             return
         }
-
-        Log.d("RegisterHeritage", "code: $code, name: $name, brand: $brand, model: $model, serial: $serial, color: $color, state: ${stateEnum.name}")
 
         imageUri?.let { uri ->
             heritageViewModel.uploadImageToFirebase(uri) { success, downloadUrl ->
                 if (success) {
-                    Log.d("UploadImage", "Image uploaded successfully: $downloadUrl")
                     val heritageAsset = HeritageAsset(
                         code, name, brand, model, serial, color,
                         stateEnum, downloadUrl ?: ""
                     )
-                    heritageViewModel.registerHeritageAsset(heritageAsset)
+                    heritageViewModel.verifyRegister(heritageAsset)
                 } else {
-                    Log.d("UploadImage", "Image upload failed")
+                    showToast("Error al subir la imagen")
                 }
             }
         } ?: run {
-            Log.d("RegisterHeritage", "No image selected")
+            showToast("No se ha seleccionado una imagen")
         }
     }
 
@@ -143,5 +143,14 @@ class HeritageAssetRegisterActivity : AppCompatActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+    private fun redirectToMainPage() {
+        val intent = Intent(this, MainFragment::class.java)
+        startActivity(intent)
+        finish()
     }
 }

@@ -25,7 +25,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp">
 
@@ -33,12 +33,13 @@
                     android:id="@+id/edtCode"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:inputType="number"
                     android:hint="Código Patrimonial" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -50,7 +51,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -62,7 +63,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -74,7 +75,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -86,7 +87,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -98,7 +99,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:hint="Estado"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">

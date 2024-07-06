@@ -2,6 +2,7 @@ package com.grtc.gdibpm.heritage_asset
 
 import android.net.Uri
 import android.util.Log
+import android.util.Patterns
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
@@ -12,13 +13,30 @@ class HeritageViewModel : ViewModel() {
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val storageReference: StorageReference = FirebaseStorage.getInstance().reference
     val heritageListMutable = MutableLiveData<HeritageAsset>()
+    val registrationStatus = MutableLiveData<Boolean>()
+    val validationError = MutableLiveData<String>()
+
+    fun verifyRegister(heritage: HeritageAsset) {
+        when {
+            heritage.HeritageCode.isEmpty() -> {
+                validationError.value = "El código del patrimonio no puede estar vacío"
+                registrationStatus.value = false
+            }
+            heritage.HeritageCode.length != 13 -> {
+                validationError.value = "El código del patrimonio debe tener 13 caracteres"
+                registrationStatus.value = false
+            }
+            else -> {
+                registerHeritageAsset(heritage)
+            }
+        }
+    }
 
     fun getHeritageByCode(code: String) {
         firestore.collection("heritageAsset")
             .whereEqualTo("heritageCode", code)
             .addSnapshotListener { snapshots, e ->
                 if (e != null) {
-                    Log.w("HeritageViewModel", "Listen failed.", e)
                     return@addSnapshotListener
                 }
 
@@ -66,7 +84,10 @@ class HeritageViewModel : ViewModel() {
         firestore.collection("heritageAsset")
             .add(heritageMap)
             .addOnSuccessListener {
-                Log.d("HeritageViewModel", "Heritage asset added successfully")
+                registrationStatus.value = true
+            }
+            .addOnFailureListener {
+                registrationStatus.value = false
             }
     }
 
