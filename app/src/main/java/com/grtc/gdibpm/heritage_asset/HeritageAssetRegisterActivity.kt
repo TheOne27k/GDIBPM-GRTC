@@ -1,6 +1,8 @@
 package com.grtc.gdibpm.heritage_asset
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
@@ -12,6 +14,8 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButton
@@ -23,6 +27,7 @@ import com.grtc.gdibpm.main.MainFragment
 class HeritageAssetRegisterActivity : AppCompatActivity() {
 
     private val PICK_IMAGE_REQUEST_CODE = 1
+    private val READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 2
     private lateinit var imagePreview: ImageView
     private var imageUri: Uri? = null
     private lateinit var heritageViewModel: HeritageViewModel
@@ -44,7 +49,9 @@ class HeritageAssetRegisterActivity : AppCompatActivity() {
         edtState.dropDownHeight = resources.getDimensionPixelSize(R.dimen.dropdown_max_height)
 
         findViewById<MaterialButton>(R.id.btnAddEvidence).setOnClickListener {
-            openImagePicker()
+            if (checkAndRequestPermissions()) {
+                openImagePicker()
+            }
         }
         btnRegister.setOnClickListener {
             registerHeritageAsset()
@@ -112,6 +119,32 @@ class HeritageAssetRegisterActivity : AppCompatActivity() {
         }
     }
 
+    private fun checkAndRequestPermissions(): Boolean {
+        val permission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            Manifest.permission.READ_MEDIA_IMAGES
+        } else {
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        }
+
+        return if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(permission), READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE)
+            false
+        } else {
+            true
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                openImagePicker()
+            } else {
+                showToast("Permiso denegado para acceder a las imágenes")
+            }
+        }
+    }
+
     private fun openImagePicker() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
@@ -148,6 +181,7 @@ class HeritageAssetRegisterActivity : AppCompatActivity() {
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+
     private fun redirectToMainPage() {
         val intent = Intent(this, MainFragment::class.java)
         startActivity(intent)
