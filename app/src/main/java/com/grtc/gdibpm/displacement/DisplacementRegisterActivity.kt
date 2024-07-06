@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
+import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.grtc.gdibpm.R
 import com.grtc.gdibpm.databinding.ActivityDisplacementRegisterBinding
@@ -45,11 +47,9 @@ class DisplacementRegisterActivity : AppCompatActivity() {
             }
         }
 
-        val edtSender = findViewById<MaterialAutoCompleteTextView>(R.id.edtSender)
+        val edtSender = findViewById<TextInputEditText>(R.id.txtSender)
         val edtReceiver = findViewById<MaterialAutoCompleteTextView>(R.id.edtReceiver)
         val userAdapter = ArrayAdapter<String>(this, R.layout.dropdown_menu_popup_item)
-        edtSender.setAdapter(userAdapter)
-        edtSender.dropDownHeight = resources.getDimensionPixelSize(R.dimen.dropdown_max_height)
         edtReceiver.setAdapter(userAdapter)
         edtReceiver.dropDownHeight = resources.getDimensionPixelSize(R.dimen.dropdown_max_height)
 
@@ -60,6 +60,12 @@ class DisplacementRegisterActivity : AppCompatActivity() {
             userAdapter.addAll(users.map { "${it.name} ${it.lastname}" })
             userIdMap = users.associate { "${it.name} ${it.lastname}" to it.id }
             userAdapter.notifyDataSetChanged()
+
+            // Obtener y mostrar el nombre del usuario actual (remitente)
+            val currentUser = users.find { it.id == FirebaseAuth.getInstance().currentUser?.uid }
+            currentUser?.let {
+                edtSender.setText("${it.name} ${it.lastname}")
+            }
         })
 
         val btnCancel = findViewById<Button>(R.id.btnCancel)
@@ -93,13 +99,14 @@ class DisplacementRegisterActivity : AppCompatActivity() {
     }
 
     private fun registerDisplacement() {
-        val senderName = binding.edtSender.text.toString()
+        val senderName = binding.txtSender.text.toString()
         val receiverName = binding.edtReceiver.text.toString()
         val motive = binding.txtMotive.text.toString()
 
         val senderRef = userIdMap[senderName]?.let { id ->
             firestore.collection("users").document(id)
-        }
+        } ?: firestore.collection("users").document(FirebaseAuth.getInstance().currentUser?.uid!!)
+
         val receiverRef = userIdMap[receiverName]?.let { id ->
             firestore.collection("users").document(id)
         }
