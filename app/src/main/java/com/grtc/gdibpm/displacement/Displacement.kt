@@ -19,7 +19,7 @@ data class Displacement(
 ) {
     companion object {
         fun getCurrentDate(): String {
-            return SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+            return SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
         }
     }
 }
